@@ -16,9 +16,10 @@
     "prepublish": "yarn clean && tsc --project tsconfig.build.json"
   },
   "dependencies": {
-    "@alien-worlds/api-core": "^0.0.133",
-    "@alien-worlds/eos": "^0.0.2",
-    "@alien-worlds/storage-mongodb": "^0.0.12"
+    "@alien-worlds/api-core": "^0.0.149",
+    "@alien-worlds/eos": "^0.0.12",
+    "@alien-worlds/eosio-contract-types": "^1.0.8",
+    "@alien-worlds/storage-mongodb": "^0.0.18"
   },
   "devDependencies": {
     "@types/jest": "^27.0.3",
