@@ -1,10 +1,10 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 26 Jun 2023 12:26:50 GMT
+ * Last updated on: Tue, 27 Jun 2023 11:46:35 GMT
  */
 
 import { MongoSource, MongoCollectionSource } from '@alien-worlds/storage-mongodb';
-import { DaoWorldsActionMongoModel } from '../mappers';
+import { DaoWorldsActionMongoModel } from '../dtos';
 
 /**
  * @class

@@ -1,7 +1,9 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 26 Jun 2023 12:26:51 GMT
+ * Last updated on: Tue, 27 Jun 2023 11:46:36 GMT
  */
+
+import { MongoDB } from '@alien-worlds/storage-mongodb';
 
 import { CandidatesMongoModel } from './candidates.dto';
 import { Candidates2MongoModel } from './candidates2.dto';
@@ -21,3 +23,18 @@ export type DataDocumentType =
   | PendingpayMongoModel
   | ProxiesMongoModel
   | VotesMongoModel;
+
+
+export type DaoWorldsDeltaMongoModel = {
+  _id: MongoDB.ObjectId;
+  block_number: MongoDB.Long;
+  code: string;
+  scope: string;
+  table: string;
+  data_hash: string;
+  data: DataDocumentType;
+  payer: string;
+  primary_key: MongoDB.Long,
+  present: boolean;
+  block_timestamp: Date;
+};
