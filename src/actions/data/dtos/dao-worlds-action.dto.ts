@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 27 Jun 2023 11:46:35 GMT
+ * Last updated on: Tue, 27 Jun 2023 11:59:25 GMT
  */
 
 import { MongoDB } from '@alien-worlds/storage-mongodb';
@@ -71,14 +71,14 @@ export type DataDocumentType =
   | WithdrawcaneMongoModel;
 
 export type DaoWorldsActionMongoModel = {
-  _id: MongoDB.ObjectId;
-  block_timestamp: Date;
-  block_number: MongoDB.Long;
-  global_sequence: MongoDB.Long;
-  receiver_sequence: MongoDB.Long;
-  trx_id: string;
-  action_hash: string;
-  action: {
+  _id?: MongoDB.ObjectId;
+  block_timestamp?: Date;
+  block_number?: MongoDB.Long;
+  global_sequence?: MongoDB.Long;
+  receiver_sequence?: MongoDB.Long;
+  trx_id?: string;
+  action_hash?: string;
+  action?: {
     account: string;
     name: string;
     data: DataDocumentType;
