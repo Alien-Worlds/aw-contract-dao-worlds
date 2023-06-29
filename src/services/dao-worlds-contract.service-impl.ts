@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Thu, 29 Jun 2023 08:14:07 GMT
+ * Last updated on: Thu, 29 Jun 2023 08:50:19 GMT
  */
 
 import { 
@@ -58,7 +58,7 @@ export class DaoWorldsContractServiceImpl
       table: 'candidates',
       table_key: 'candidate_name',
     });
-  };
+  }
 
   /**
    * A EosSmartContractServiceImpl for the candidates2 table.
@@ -75,7 +75,7 @@ export class DaoWorldsContractServiceImpl
       table: 'candidates2',
       table_key: 'candidate_name',
     });
-  };
+  }
 
   /**
    * A EosSmartContractServiceImpl for the candperms table.
@@ -92,7 +92,7 @@ export class DaoWorldsContractServiceImpl
       table: 'candperms',
       table_key: 'cand',
     });
-  };
+  }
 
   /**
    * A EosSmartContractServiceImpl for the custodians1 table.
@@ -109,7 +109,7 @@ export class DaoWorldsContractServiceImpl
       table: 'custodians1',
       table_key: 'cust_name',
     });
-  };
+  }
 
   /**
    * A EosSmartContractServiceImpl for the dacglobals table.
@@ -126,7 +126,7 @@ export class DaoWorldsContractServiceImpl
       table: 'dacglobals',
       table_key: 'data',
     });
-  };
+  }
 
   /**
    * A EosSmartContractServiceImpl for the pendingpay table.
@@ -143,7 +143,7 @@ export class DaoWorldsContractServiceImpl
       table: 'pendingpay',
       table_key: 'key',
     });
-  };
+  }
 
   /**
    * A EosSmartContractServiceImpl for the proxies table.
@@ -160,7 +160,7 @@ export class DaoWorldsContractServiceImpl
       table: 'proxies',
       table_key: 'proxy',
     });
-  };
+  }
 
   /**
    * A EosSmartContractServiceImpl for the votes table.
@@ -177,6 +177,6 @@ export class DaoWorldsContractServiceImpl
       table: 'votes',
       table_key: 'voter',
     });
-  };
+  }
 
 }

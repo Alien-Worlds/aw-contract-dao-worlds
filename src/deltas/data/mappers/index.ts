@@ -1,6 +1,14 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Thu, 29 Jun 2023 08:14:07 GMT
+ * Last updated on: Thu, 29 Jun 2023 08:50:19 GMT
  */
 
 export * from './dao-worlds-delta.mapper';
+export * from './candidates.mapper';
+export * from './candidates2.mapper';
+export * from './candperms.mapper';
+export * from './custodians1.mapper';
+export * from './dacglobals.mapper';
+export * from './pendingpay.mapper';
+export * from './proxies.mapper';
+export * from './votes.mapper';
