@@ -1,3 +1,8 @@
+/**
+ * Auto generated. DO NOT edit manually.
+ * Last updated on: Thu, 29 Jun 2023 08:14:07 GMT
+ */
+
 import { 
   CandidatesRawModel,
   Candidates2RawModel,
@@ -44,9 +49,9 @@ export class DaoWorldsContractServiceImpl
    * @type {EosSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
-  public readonly fetchCandidates = async (
+  public async fetchCandidates (
     options?: GetTableRowsOptions
-  ): Promise<Result<CandidatesRawModel[], Error>> => {
+  ): Promise<Result<CandidatesRawModel[], Error>> {
     return await this.getAll<CandidatesRawModel>('candidate_name', {
       ...options,
       code: 'dao.worlds',
@@ -61,9 +66,9 @@ export class DaoWorldsContractServiceImpl
    * @type {EosSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
-  public readonly fetchCandidates2 = async (
+  public async fetchCandidates2 (
     options?: GetTableRowsOptions
-  ): Promise<Result<Candidates2RawModel[], Error>> => {
+  ): Promise<Result<Candidates2RawModel[], Error>> {
     return await this.getAll<Candidates2RawModel>('candidate_name', {
       ...options,
       code: 'dao.worlds',
@@ -78,9 +83,9 @@ export class DaoWorldsContractServiceImpl
    * @type {EosSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
-  public readonly fetchCandperms = async (
+  public async fetchCandperms (
     options?: GetTableRowsOptions
-  ): Promise<Result<CandpermsRawModel[], Error>> => {
+  ): Promise<Result<CandpermsRawModel[], Error>> {
     return await this.getAll<CandpermsRawModel>('candidate_name', {
       ...options,
       code: 'dao.worlds',
@@ -95,9 +100,9 @@ export class DaoWorldsContractServiceImpl
    * @type {EosSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
-  public readonly fetchCustodians1 = async (
+  public async fetchCustodians1 (
     options?: GetTableRowsOptions
-  ): Promise<Result<Custodians1RawModel[], Error>> => {
+  ): Promise<Result<Custodians1RawModel[], Error>> {
     return await this.getAll<Custodians1RawModel>('candidate_name', {
       ...options,
       code: 'dao.worlds',
@@ -112,9 +117,9 @@ export class DaoWorldsContractServiceImpl
    * @type {EosSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
-  public readonly fetchDacglobals = async (
+  public async fetchDacglobals (
     options?: GetTableRowsOptions
-  ): Promise<Result<DacglobalsRawModel[], Error>> => {
+  ): Promise<Result<DacglobalsRawModel[], Error>> {
     return await this.getAll<DacglobalsRawModel>('candidate_name', {
       ...options,
       code: 'dao.worlds',
@@ -129,9 +134,9 @@ export class DaoWorldsContractServiceImpl
    * @type {EosSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
-  public readonly fetchPendingpay = async (
+  public async fetchPendingpay (
     options?: GetTableRowsOptions
-  ): Promise<Result<PendingpayRawModel[], Error>> => {
+  ): Promise<Result<PendingpayRawModel[], Error>> {
     return await this.getAll<PendingpayRawModel>('candidate_name', {
       ...options,
       code: 'dao.worlds',
@@ -146,9 +151,9 @@ export class DaoWorldsContractServiceImpl
    * @type {EosSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
-  public readonly fetchProxies = async (
+  public async fetchProxies (
     options?: GetTableRowsOptions
-  ): Promise<Result<ProxiesRawModel[], Error>> => {
+  ): Promise<Result<ProxiesRawModel[], Error>> {
     return await this.getAll<ProxiesRawModel>('candidate_name', {
       ...options,
       code: 'dao.worlds',
@@ -163,9 +168,9 @@ export class DaoWorldsContractServiceImpl
    * @type {EosSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
-  public readonly fetchVotes = async (
+  public async fetchVotes (
     options?: GetTableRowsOptions
-  ): Promise<Result<VotesRawModel[], Error>> => {
+  ): Promise<Result<VotesRawModel[], Error>> {
     return await this.getAll<VotesRawModel>('candidate_name', {
       ...options,
       code: 'dao.worlds',
