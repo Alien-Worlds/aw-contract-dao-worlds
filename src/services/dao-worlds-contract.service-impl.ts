@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Thu, 29 Jun 2023 08:50:19 GMT
+ * Last updated on: Tue, 04 Jul 2023 13:56:00 GMT
  */
 
 import { 
@@ -86,7 +86,7 @@ export class DaoWorldsContractServiceImpl
   public async fetchCandperms (
     options?: GetTableRowsOptions
   ): Promise<Result<CandpermsRawModel[], Error>> {
-    return await this.getAll<CandpermsRawModel>('candidate_name', {
+    return await this.getAll<CandpermsRawModel>('cand', {
       ...options,
       code: 'dao.worlds',
       table: 'candperms',
@@ -103,7 +103,7 @@ export class DaoWorldsContractServiceImpl
   public async fetchCustodians1 (
     options?: GetTableRowsOptions
   ): Promise<Result<Custodians1RawModel[], Error>> {
-    return await this.getAll<Custodians1RawModel>('candidate_name', {
+    return await this.getAll<Custodians1RawModel>('cust_name', {
       ...options,
       code: 'dao.worlds',
       table: 'custodians1',
@@ -120,7 +120,7 @@ export class DaoWorldsContractServiceImpl
   public async fetchDacglobals (
     options?: GetTableRowsOptions
   ): Promise<Result<DacglobalsRawModel[], Error>> {
-    return await this.getAll<DacglobalsRawModel>('candidate_name', {
+    return await this.getAll<DacglobalsRawModel>('data', {
       ...options,
       code: 'dao.worlds',
       table: 'dacglobals',
@@ -137,7 +137,7 @@ export class DaoWorldsContractServiceImpl
   public async fetchPendingpay (
     options?: GetTableRowsOptions
   ): Promise<Result<PendingpayRawModel[], Error>> {
-    return await this.getAll<PendingpayRawModel>('candidate_name', {
+    return await this.getAll<PendingpayRawModel>('key', {
       ...options,
       code: 'dao.worlds',
       table: 'pendingpay',
@@ -154,7 +154,7 @@ export class DaoWorldsContractServiceImpl
   public async fetchProxies (
     options?: GetTableRowsOptions
   ): Promise<Result<ProxiesRawModel[], Error>> {
-    return await this.getAll<ProxiesRawModel>('candidate_name', {
+    return await this.getAll<ProxiesRawModel>('proxy', {
       ...options,
       code: 'dao.worlds',
       table: 'proxies',
@@ -171,7 +171,7 @@ export class DaoWorldsContractServiceImpl
   public async fetchVotes (
     options?: GetTableRowsOptions
   ): Promise<Result<VotesRawModel[], Error>> {
-    return await this.getAll<VotesRawModel>('candidate_name', {
+    return await this.getAll<VotesRawModel>('voter', {
       ...options,
       code: 'dao.worlds',
       table: 'votes',
