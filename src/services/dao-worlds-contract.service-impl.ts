@@ -6,7 +6,7 @@ import {
 
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 04 Jul 2023 13:56:00 GMT
+ * Last updated on: Thu, 06 Jul 2023 12:08:24 GMT
  */
 
 import {
@@ -52,14 +52,18 @@ export class DaoWorldsContractServiceImpl
   public async fetchCandidates(
     options?: GetTableRowsOptions
   ): Promise<Result<CandidatesRawModel[], Error>> {
-    return await this.getAll<CandidatesRawModel>('candidate_name', {
+    const table_key = 'candidate_name';
+    const tableRowOptions = {
       ...options,
       code: 'dao.worlds',
       table: 'candidates',
-      table_key: 'candidate_name',
-    });
-  }
+      table_key,
+    };
 
+    return options?.limit > 0
+      ? await this.getMany<CandidatesRawModel>(tableRowOptions)
+      : await this.getAll<CandidatesRawModel>(table_key, tableRowOptions);
+  }
   /**
    * A EosSmartContractServiceImpl for the candidates2 table.
    *
@@ -69,14 +73,18 @@ export class DaoWorldsContractServiceImpl
   public async fetchCandidates2(
     options?: GetTableRowsOptions
   ): Promise<Result<Candidates2RawModel[], Error>> {
-    return await this.getAll<Candidates2RawModel>('candidate_name', {
+    const table_key = 'candidate_name';
+    const tableRowOptions = {
       ...options,
       code: 'dao.worlds',
       table: 'candidates2',
-      table_key: 'candidate_name',
-    });
-  }
+      table_key,
+    };
 
+    return options?.limit > 0
+      ? await this.getMany<Candidates2RawModel>(tableRowOptions)
+      : await this.getAll<Candidates2RawModel>(table_key, tableRowOptions);
+  }
   /**
    * A EosSmartContractServiceImpl for the candperms table.
    *
@@ -86,14 +94,18 @@ export class DaoWorldsContractServiceImpl
   public async fetchCandperms(
     options?: GetTableRowsOptions
   ): Promise<Result<CandpermsRawModel[], Error>> {
-    return await this.getAll<CandpermsRawModel>('cand', {
+    const table_key = 'cand';
+    const tableRowOptions = {
       ...options,
       code: 'dao.worlds',
       table: 'candperms',
-      table_key: 'cand',
-    });
-  }
+      table_key,
+    };
 
+    return options?.limit > 0
+      ? await this.getMany<CandpermsRawModel>(tableRowOptions)
+      : await this.getAll<CandpermsRawModel>(table_key, tableRowOptions);
+  }
   /**
    * A EosSmartContractServiceImpl for the custodians1 table.
    *
@@ -103,14 +115,18 @@ export class DaoWorldsContractServiceImpl
   public async fetchCustodians1(
     options?: GetTableRowsOptions
   ): Promise<Result<Custodians1RawModel[], Error>> {
-    return await this.getAll<Custodians1RawModel>('cust_name', {
+    const table_key = 'cust_name';
+    const tableRowOptions = {
       ...options,
       code: 'dao.worlds',
       table: 'custodians1',
-      table_key: 'cust_name',
-    });
-  }
+      table_key,
+    };
 
+    return options?.limit > 0
+      ? await this.getMany<Custodians1RawModel>(tableRowOptions)
+      : await this.getAll<Custodians1RawModel>(table_key, tableRowOptions);
+  }
   /**
    * A EosSmartContractServiceImpl for the dacglobals table.
    *
@@ -120,14 +136,18 @@ export class DaoWorldsContractServiceImpl
   public async fetchDacglobals(
     options?: GetTableRowsOptions
   ): Promise<Result<DacglobalsRawModel[], Error>> {
-    return await this.getAll<DacglobalsRawModel>('', {
+    const table_key = '';
+    const tableRowOptions = {
       ...options,
       code: 'dao.worlds',
       table: 'dacglobals',
-      table_key: '',
-    });
-  }
+      table_key,
+    };
 
+    return options?.limit > 0
+      ? await this.getMany<DacglobalsRawModel>(tableRowOptions)
+      : await this.getAll<DacglobalsRawModel>(table_key, tableRowOptions);
+  }
   /**
    * A EosSmartContractServiceImpl for the pendingpay table.
    *
@@ -137,14 +157,18 @@ export class DaoWorldsContractServiceImpl
   public async fetchPendingpay(
     options?: GetTableRowsOptions
   ): Promise<Result<PendingpayRawModel[], Error>> {
-    return await this.getAll<PendingpayRawModel>('key', {
+    const table_key = 'key';
+    const tableRowOptions = {
       ...options,
       code: 'dao.worlds',
       table: 'pendingpay',
-      table_key: 'key',
-    });
-  }
+      table_key,
+    };
 
+    return options?.limit > 0
+      ? await this.getMany<PendingpayRawModel>(tableRowOptions)
+      : await this.getAll<PendingpayRawModel>(table_key, tableRowOptions);
+  }
   /**
    * A EosSmartContractServiceImpl for the proxies table.
    *
@@ -154,14 +178,18 @@ export class DaoWorldsContractServiceImpl
   public async fetchProxies(
     options?: GetTableRowsOptions
   ): Promise<Result<ProxiesRawModel[], Error>> {
-    return await this.getAll<ProxiesRawModel>('proxy', {
+    const table_key = 'proxy';
+    const tableRowOptions = {
       ...options,
       code: 'dao.worlds',
       table: 'proxies',
-      table_key: 'proxy',
-    });
-  }
+      table_key,
+    };
 
+    return options?.limit > 0
+      ? await this.getMany<ProxiesRawModel>(tableRowOptions)
+      : await this.getAll<ProxiesRawModel>(table_key, tableRowOptions);
+  }
   /**
    * A EosSmartContractServiceImpl for the votes table.
    *
@@ -171,11 +199,16 @@ export class DaoWorldsContractServiceImpl
   public async fetchVotes(
     options?: GetTableRowsOptions
   ): Promise<Result<VotesRawModel[], Error>> {
-    return await this.getAll<VotesRawModel>('voter', {
+    const table_key = 'voter';
+    const tableRowOptions = {
       ...options,
       code: 'dao.worlds',
       table: 'votes',
-      table_key: 'voter',
-    });
+      table_key,
+    };
+
+    return options?.limit > 0
+      ? await this.getMany<VotesRawModel>(tableRowOptions)
+      : await this.getAll<VotesRawModel>(table_key, tableRowOptions);
   }
 }
