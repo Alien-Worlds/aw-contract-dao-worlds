@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Thu, 06 Jul 2023 12:08:24 GMT
+ * Last updated on: Thu, 06 Jul 2023 15:54:49 GMT
  */
 
 
@@ -17,17 +17,18 @@ import {
 import { ContractDelta, MapperImpl, parseToBigInt } from '@alien-worlds/api-core';
 import { MongoDB } from '@alien-worlds/storage-mongodb';
 import { DataEntityType } from '../../domain/entities/dao-worlds-delta';
-import { DaoWorldsDeltaMongoModel } from '../dtos';
+import { DaoWorldsDeltaMongoModel, DaoWorldsDeltaRawModel } from '../dtos';
 import { DaoWorldsTableName } from '../../domain/enums';
-import { CandidatesMongoMapper } from "./candidates.mapper";
-import { Candidates2MongoMapper } from "./candidates2.mapper";
-import { CandpermsMongoMapper } from "./candperms.mapper";
-import { Custodians1MongoMapper } from "./custodians1.mapper";
-import { DacglobalsMongoMapper } from "./dacglobals.mapper";
-import { PendingpayMongoMapper } from "./pendingpay.mapper";
-import { ProxiesMongoMapper } from "./proxies.mapper";
-import { VotesMongoMapper } from "./votes.mapper";
+import { CandidatesMongoMapper, CandidatesRawMapper } from "./candidates.mapper";
+import { Candidates2MongoMapper, Candidates2RawMapper } from "./candidates2.mapper";
+import { CandpermsMongoMapper, CandpermsRawMapper } from "./candperms.mapper";
+import { Custodians1MongoMapper, Custodians1RawMapper } from "./custodians1.mapper";
+import { DacglobalsMongoMapper, DacglobalsRawMapper } from "./dacglobals.mapper";
+import { PendingpayMongoMapper, PendingpayRawMapper } from "./pendingpay.mapper";
+import { ProxiesMongoMapper, ProxiesRawMapper } from "./proxies.mapper";
+import { VotesMongoMapper, VotesRawMapper } from "./votes.mapper";
 
+// Mongo Mapper
 export class DaoWorldsDeltaMongoMapper
   extends MapperImpl<ContractDelta<DataEntityType, DaoWorldsDeltaMongoModel>, DaoWorldsDeltaMongoModel>
 {
@@ -37,28 +38,44 @@ export class DaoWorldsDeltaMongoMapper
     let entityData;
     switch (entity.table) {
       case DaoWorldsTableName.Candidates:
-        entityData = new CandidatesMongoMapper().fromEntity(entity.delta as Candidates);
+        entityData = new CandidatesMongoMapper().fromEntity(
+          entity.data as Candidates
+        );
         break;
       case DaoWorldsTableName.Candidates2:
-        entityData = new Candidates2MongoMapper().fromEntity(entity.delta as Candidates2);
+        entityData = new Candidates2MongoMapper().fromEntity(
+          entity.data as Candidates2
+        );
         break;
       case DaoWorldsTableName.Candperms:
-        entityData = new CandpermsMongoMapper().fromEntity(entity.delta as Candperms);
+        entityData = new CandpermsMongoMapper().fromEntity(
+          entity.data as Candperms
+        );
         break;
       case DaoWorldsTableName.Custodians1:
-        entityData = new Custodians1MongoMapper().fromEntity(entity.delta as Custodians1);
+        entityData = new Custodians1MongoMapper().fromEntity(
+          entity.data as Custodians1
+        );
         break;
       case DaoWorldsTableName.Dacglobals:
-        entityData = new DacglobalsMongoMapper().fromEntity(entity.delta as Dacglobals);
+        entityData = new DacglobalsMongoMapper().fromEntity(
+          entity.data as Dacglobals
+        );
         break;
       case DaoWorldsTableName.Pendingpay:
-        entityData = new PendingpayMongoMapper().fromEntity(entity.delta as Pendingpay);
+        entityData = new PendingpayMongoMapper().fromEntity(
+          entity.data as Pendingpay
+        );
         break;
       case DaoWorldsTableName.Proxies:
-        entityData = new ProxiesMongoMapper().fromEntity(entity.delta as Proxies);
+        entityData = new ProxiesMongoMapper().fromEntity(
+          entity.data as Proxies
+        );
         break;
       case DaoWorldsTableName.Votes:
-        entityData = new VotesMongoMapper().fromEntity(entity.delta as Votes);
+        entityData = new VotesMongoMapper().fromEntity(
+          entity.data as Votes
+        );
         break;
     }
 
@@ -69,7 +86,6 @@ export class DaoWorldsDeltaMongoMapper
       code: entity.code,
       scope: entity.scope,
       table: entity.table,
-      data_hash: entity.deltaHash,
       data: entityData,
       payer: entity.payer,
       primary_key: new MongoDB.Long(entity.primaryKey),
@@ -114,7 +130,6 @@ export class DaoWorldsDeltaMongoMapper
       code,
       scope,
       table,
-      data_hash,
       payer,
       primary_key,
       present,
@@ -127,7 +142,74 @@ export class DaoWorldsDeltaMongoMapper
       code,
       scope,
       table,
-      data_hash,
+      data,
+      payer,
+      parseToBigInt(primary_key),
+      present,
+      block_timestamp
+    );
+  }
+}
+
+// Processor Task Mapper
+export class DaoWorldsDeltaProcessorTaskMapper extends MapperImpl<
+  ContractDelta<DataEntityType, DaoWorldsDeltaRawModel>, 
+    DaoWorldsDeltaRawModel
+> {
+  public fromEntity(
+    entity: ContractDelta<DataEntityType, DaoWorldsDeltaRawModel>
+  ): DaoWorldsDeltaRawModel {
+    throw new Error('method not implemented');
+  }
+
+  public toEntity(
+    rawModel: DaoWorldsDeltaRawModel
+  ): ContractDelta<DataEntityType, DaoWorldsDeltaRawModel> {
+    let data;
+    switch (rawModel.table) {
+      case DaoWorldsTableName.Candidates:
+        data = new CandidatesRawMapper().toEntity(rawModel.data);
+        break;
+      case DaoWorldsTableName.Candidates2:
+        data = new Candidates2RawMapper().toEntity(rawModel.data);
+        break;
+      case DaoWorldsTableName.Candperms:
+        data = new CandpermsRawMapper().toEntity(rawModel.data);
+        break;
+      case DaoWorldsTableName.Custodians1:
+        data = new Custodians1RawMapper().toEntity(rawModel.data);
+        break;
+      case DaoWorldsTableName.Dacglobals:
+        data = new DacglobalsRawMapper().toEntity(rawModel.data);
+        break;
+      case DaoWorldsTableName.Pendingpay:
+        data = new PendingpayRawMapper().toEntity(rawModel.data);
+        break;
+      case DaoWorldsTableName.Proxies:
+        data = new ProxiesRawMapper().toEntity(rawModel.data);
+        break;
+      case DaoWorldsTableName.Votes:
+        data = new VotesRawMapper().toEntity(rawModel.data);
+        break;
+    }
+
+    const {
+      block_number,
+      code,
+      scope,
+      table,
+      payer,
+      primary_key,
+      present,
+      block_timestamp,
+    } = rawModel;
+
+    return new ContractDelta<DataEntityType, DaoWorldsDeltaRawModel>(
+      '',
+      parseToBigInt(block_number),
+      code,
+      scope,
+      table,
       data,
       payer,
       parseToBigInt(primary_key),

@@ -1,18 +1,18 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Thu, 06 Jul 2023 12:08:24 GMT
+ * Last updated on: Thu, 06 Jul 2023 15:54:49 GMT
  */
 
 import { MongoDB } from '@alien-worlds/storage-mongodb';
 
-import { CandidatesMongoModel } from './candidates.dto';
-import { Candidates2MongoModel } from './candidates2.dto';
-import { CandpermsMongoModel } from './candperms.dto';
-import { Custodians1MongoModel } from './custodians1.dto';
-import { DacglobalsMongoModel } from './dacglobals.dto';
-import { PendingpayMongoModel } from './pendingpay.dto';
-import { ProxiesMongoModel } from './proxies.dto';
-import { VotesMongoModel } from './votes.dto';
+import { CandidatesMongoModel, CandidatesRawModel } from './candidates.dto';
+import { Candidates2MongoModel, Candidates2RawModel } from './candidates2.dto';
+import { CandpermsMongoModel, CandpermsRawModel } from './candperms.dto';
+import { Custodians1MongoModel, Custodians1RawModel } from './custodians1.dto';
+import { DacglobalsMongoModel, DacglobalsRawModel } from './dacglobals.dto';
+import { PendingpayMongoModel, PendingpayRawModel } from './pendingpay.dto';
+import { ProxiesMongoModel, ProxiesRawModel } from './proxies.dto';
+import { VotesMongoModel, VotesRawModel } from './votes.dto';
 
 export type DataDocumentType =
   | CandidatesMongoModel
@@ -23,6 +23,16 @@ export type DataDocumentType =
   | PendingpayMongoModel
   | ProxiesMongoModel
   | VotesMongoModel;
+
+export type DataRawType =
+  | CandidatesRawModel
+  | Candidates2RawModel
+  | CandpermsRawModel
+  | Custodians1RawModel
+  | DacglobalsRawModel
+  | PendingpayRawModel
+  | ProxiesRawModel
+  | VotesRawModel;
 
 
 export type DaoWorldsDeltaMongoModel = {
@@ -37,4 +47,16 @@ export type DaoWorldsDeltaMongoModel = {
   primary_key?: MongoDB.Long,
   present?: boolean;
   block_timestamp?: Date;
+};
+
+export type DaoWorldsDeltaRawModel = {
+  block_timestamp: Date;
+  block_number: string;
+  code: string;
+  scope: string;
+  table: string;
+  payer: string;
+  primary_key: string;
+  present: boolean;
+  data: DataRawType;
 };

@@ -1,41 +1,41 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Thu, 06 Jul 2023 12:08:24 GMT
+ * Last updated on: Thu, 06 Jul 2023 15:54:48 GMT
  */
 
 import { MongoDB } from '@alien-worlds/storage-mongodb';
 
-import { AppointcustMongoModel } from './appointcust.dto';
-import { BalanceobsvMongoModel } from './balanceobsv.dto';
-import { ClaimbudgetMongoModel } from './claimbudget.dto';
-import { ClaimpayMongoModel } from './claimpay.dto';
-import { FirecandMongoModel } from './firecand.dto';
-import { FirecustMongoModel } from './firecust.dto';
-import { FlagcandprofMongoModel } from './flagcandprof.dto';
-import { NewperiodMongoModel } from './newperiod.dto';
-import { NominateMongoModel } from './nominate.dto';
-import { NominatecaneMongoModel } from './nominatecane.dto';
-import { PaycpuMongoModel } from './paycpu.dto';
-import { RegproxyMongoModel } from './regproxy.dto';
-import { RejectcuspayMongoModel } from './rejectcuspay.dto';
-import { RemovecandMongoModel } from './removecand.dto';
-import { RemovecstvteMongoModel } from './removecstvte.dto';
-import { RemovecuspayMongoModel } from './removecuspay.dto';
-import { ResigncustMongoModel } from './resigncust.dto';
-import { RunnewperiodMongoModel } from './runnewperiod.dto';
-import { SetbudgetMongoModel } from './setbudget.dto';
-import { SetpermMongoModel } from './setperm.dto';
-import { StakeobsvMongoModel } from './stakeobsv.dto';
-import { StprofileMongoModel } from './stprofile.dto';
-import { UnregproxyMongoModel } from './unregproxy.dto';
-import { UnsetbudgetMongoModel } from './unsetbudget.dto';
-import { UpdatebioMongoModel } from './updatebio.dto';
-import { UpdateconfigeMongoModel } from './updateconfige.dto';
-import { UpdatereqpayMongoModel } from './updatereqpay.dto';
-import { VotecustMongoModel } from './votecust.dto';
-import { VoteproxyMongoModel } from './voteproxy.dto';
-import { WeightobsvMongoModel } from './weightobsv.dto';
-import { WithdrawcaneMongoModel } from './withdrawcane.dto';
+import { AppointcustMongoModel, AppointcustRawModel } from './appointcust.dto';
+import { BalanceobsvMongoModel, BalanceobsvRawModel } from './balanceobsv.dto';
+import { ClaimbudgetMongoModel, ClaimbudgetRawModel } from './claimbudget.dto';
+import { ClaimpayMongoModel, ClaimpayRawModel } from './claimpay.dto';
+import { FirecandMongoModel, FirecandRawModel } from './firecand.dto';
+import { FirecustMongoModel, FirecustRawModel } from './firecust.dto';
+import { FlagcandprofMongoModel, FlagcandprofRawModel } from './flagcandprof.dto';
+import { NewperiodMongoModel, NewperiodRawModel } from './newperiod.dto';
+import { NominateMongoModel, NominateRawModel } from './nominate.dto';
+import { NominatecaneMongoModel, NominatecaneRawModel } from './nominatecane.dto';
+import { PaycpuMongoModel, PaycpuRawModel } from './paycpu.dto';
+import { RegproxyMongoModel, RegproxyRawModel } from './regproxy.dto';
+import { RejectcuspayMongoModel, RejectcuspayRawModel } from './rejectcuspay.dto';
+import { RemovecandMongoModel, RemovecandRawModel } from './removecand.dto';
+import { RemovecstvteMongoModel, RemovecstvteRawModel } from './removecstvte.dto';
+import { RemovecuspayMongoModel, RemovecuspayRawModel } from './removecuspay.dto';
+import { ResigncustMongoModel, ResigncustRawModel } from './resigncust.dto';
+import { RunnewperiodMongoModel, RunnewperiodRawModel } from './runnewperiod.dto';
+import { SetbudgetMongoModel, SetbudgetRawModel } from './setbudget.dto';
+import { SetpermMongoModel, SetpermRawModel } from './setperm.dto';
+import { StakeobsvMongoModel, StakeobsvRawModel } from './stakeobsv.dto';
+import { StprofileMongoModel, StprofileRawModel } from './stprofile.dto';
+import { UnregproxyMongoModel, UnregproxyRawModel } from './unregproxy.dto';
+import { UnsetbudgetMongoModel, UnsetbudgetRawModel } from './unsetbudget.dto';
+import { UpdatebioMongoModel, UpdatebioRawModel } from './updatebio.dto';
+import { UpdateconfigeMongoModel, UpdateconfigeRawModel } from './updateconfige.dto';
+import { UpdatereqpayMongoModel, UpdatereqpayRawModel } from './updatereqpay.dto';
+import { VotecustMongoModel, VotecustRawModel } from './votecust.dto';
+import { VoteproxyMongoModel, VoteproxyRawModel } from './voteproxy.dto';
+import { WeightobsvMongoModel, WeightobsvRawModel } from './weightobsv.dto';
+import { WithdrawcaneMongoModel, WithdrawcaneRawModel } from './withdrawcane.dto';
 
 export type DataDocumentType =
   | AppointcustMongoModel
@@ -70,6 +70,39 @@ export type DataDocumentType =
   | WeightobsvMongoModel
   | WithdrawcaneMongoModel;
 
+export type DataRawType =
+  | AppointcustRawModel
+  | BalanceobsvRawModel
+  | ClaimbudgetRawModel
+  | ClaimpayRawModel
+  | FirecandRawModel
+  | FirecustRawModel
+  | FlagcandprofRawModel
+  | NewperiodRawModel
+  | NominateRawModel
+  | NominatecaneRawModel
+  | PaycpuRawModel
+  | RegproxyRawModel
+  | RejectcuspayRawModel
+  | RemovecandRawModel
+  | RemovecstvteRawModel
+  | RemovecuspayRawModel
+  | ResigncustRawModel
+  | RunnewperiodRawModel
+  | SetbudgetRawModel
+  | SetpermRawModel
+  | StakeobsvRawModel
+  | StprofileRawModel
+  | UnregproxyRawModel
+  | UnsetbudgetRawModel
+  | UpdatebioRawModel
+  | UpdateconfigeRawModel
+  | UpdatereqpayRawModel
+  | VotecustRawModel
+  | VoteproxyRawModel
+  | WeightobsvRawModel
+  | WithdrawcaneRawModel;
+
 export type DaoWorldsActionMongoModel = {
   _id?: MongoDB.ObjectId;
   block_timestamp?: Date;
@@ -83,5 +116,17 @@ export type DaoWorldsActionMongoModel = {
     name: string;
     data: DataDocumentType;
   };
+};
+
+export type DaoWorldsActionRawModel = {
+  account: string;
+  name: string;
+  block_timestamp: Date;
+  block_number: string;
+  global_sequence: string;
+  recv_sequence: string;
+  transaction_id: string;
+  data: DataRawType;
+  [key: string]: unknown;
 };
 
