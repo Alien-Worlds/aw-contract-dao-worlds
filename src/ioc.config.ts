@@ -1,10 +1,14 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Thu, 06 Jul 2023 15:54:49 GMT
+ * Last updated on: Mon, 10 Jul 2023 07:42:05 GMT
  */
 
 import { Container, RepositoryImpl } from '@alien-worlds/api-core';
-import { MongoConfig, MongoSource } from '@alien-worlds/storage-mongodb';
+import { 
+  MongoConfig,
+  MongoQueryBuilders, 
+  MongoSource,
+} from '@alien-worlds/storage-mongodb';
 
 import { DaoWorldsActionMongoMapper } from './actions/data/mappers';
 import { DaoWorldsActionMongoSource } from './actions/data/data-sources';
@@ -26,10 +30,13 @@ export const setupDaoWorldsActionRepository = async (
   } else {
     mongoSource = await MongoSource.create(mongo);
   }
+
+  const mapper = new DaoWorldsActionMongoMapper();
+  
   const repository = new RepositoryImpl(
     new DaoWorldsActionMongoSource(mongoSource),
-    new DaoWorldsActionMongoMapper(),
-    null
+    mapper,
+    new MongoQueryBuilders(mapper)
   );
 
   if (container) {
@@ -51,10 +58,13 @@ export const setupDaoWorldsDeltaRepository = async (
   } else {
     mongoSource = await MongoSource.create(mongo);
   }
+
+  const mapper = new DaoWorldsDeltaMongoMapper();
+  
   const repository = new RepositoryImpl(
     new DaoWorldsDeltaMongoSource(mongoSource),
-    new DaoWorldsDeltaMongoMapper(),
-    null
+    mapper,
+    new MongoQueryBuilders(mapper)
   );
 
   if (container) {

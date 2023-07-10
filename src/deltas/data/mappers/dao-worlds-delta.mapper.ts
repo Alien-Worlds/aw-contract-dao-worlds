@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Thu, 06 Jul 2023 15:54:49 GMT
+ * Last updated on: Mon, 10 Jul 2023 07:42:05 GMT
  */
 
 
@@ -30,10 +30,10 @@ import { VotesMongoMapper, VotesRawMapper } from "./votes.mapper";
 
 // Mongo Mapper
 export class DaoWorldsDeltaMongoMapper
-  extends MapperImpl<ContractDelta<DataEntityType, DaoWorldsDeltaMongoModel>, DaoWorldsDeltaMongoModel>
+  extends MapperImpl<ContractDelta<DataEntityType>, DaoWorldsDeltaMongoModel>
 {
   public fromEntity(
-    entity: ContractDelta<DataEntityType, DaoWorldsDeltaMongoModel>
+    entity: ContractDelta<DataEntityType>
   ): DaoWorldsDeltaMongoModel {
     let entityData;
     switch (entity.table) {
@@ -95,7 +95,7 @@ export class DaoWorldsDeltaMongoMapper
 
   public toEntity(
     mongoModel: DaoWorldsDeltaMongoModel
-  ): ContractDelta<DataEntityType, DaoWorldsDeltaMongoModel> {
+  ): ContractDelta<DataEntityType> {
     let data;
     switch (mongoModel.table) {
       case DaoWorldsTableName.Candidates:
@@ -136,7 +136,7 @@ export class DaoWorldsDeltaMongoMapper
       block_timestamp,
     } = mongoModel;
 
-    return new ContractDelta<DataEntityType, DaoWorldsDeltaMongoModel>(
+    return new ContractDelta<DataEntityType>(
       _id.toString(),
       parseToBigInt(block_number),
       code,
