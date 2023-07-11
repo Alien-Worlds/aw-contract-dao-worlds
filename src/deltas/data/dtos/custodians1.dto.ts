@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 07:42:05 GMT
+ * Last updated on: Tue, 11 Jul 2023 10:01:27 GMT
  */
 
 import { MongoDB } from '@alien-worlds/storage-mongodb';
@@ -17,8 +17,8 @@ export type Custodians1MongoModel = {
   _id?: MongoDB.ObjectId;
   cust_name?: string;
   requestedpay?: AssetMongoModel;
-  total_vote_power?: MongoDB.Long;
-  rank?: MongoDB.Long;
+  total_vote_power?: number;
+  rank?: number;
   number_voters?: number;
   avg_vote_time_stamp?: Date;
   [key: string]: unknown;
@@ -34,8 +34,8 @@ export type Custodians1MongoModel = {
 export type Custodians1RawModel = {
   cust_name?: string;
   requestedpay?: AssetRawModel;
-  total_vote_power?: bigint;
-  rank?: bigint;
+  total_vote_power?: number;
+  rank?: number;
   number_voters?: number;
   avg_vote_time_stamp?: Date;
   [key: string]: unknown;

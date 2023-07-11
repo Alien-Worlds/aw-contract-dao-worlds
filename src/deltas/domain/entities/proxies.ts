@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 07:42:05 GMT
+ * Last updated on: Tue, 11 Jul 2023 10:01:27 GMT
  */
 
 import { Entity, UnknownObject } from "@alien-worlds/api-core";
@@ -17,13 +17,13 @@ export class Proxies implements Entity {
    * @public
    * @constructor
    * @param string proxy
-   * @param bigint totalWeight
+   * @param number totalWeight
    * @param string [id]
    * @returns `Proxies` - An instance of the `Proxies` class.
    */
   public constructor(
     public proxy: string,
-    public totalWeight: bigint,
+    public totalWeight: number,
     public id?: string,
   ) {}
 
@@ -51,7 +51,7 @@ export class Proxies implements Entity {
    */
   public static create(
     proxy: string,
-    totalWeight: bigint,
+    totalWeight: number,
     id?: string,
     rest?: UnknownObject
   ): Proxies {
@@ -68,7 +68,7 @@ export class Proxies implements Entity {
   public static getDefault(): Proxies {
     return new Proxies(
       '',
-      0n,
+      0,
     );
   }
 }

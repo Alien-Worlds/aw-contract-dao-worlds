@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 07:42:05 GMT
+ * Last updated on: Tue, 11 Jul 2023 10:01:27 GMT
  */
 
 import { MongoDB } from '@alien-worlds/storage-mongodb';
@@ -15,7 +15,7 @@ import { MongoDB } from '@alien-worlds/storage-mongodb';
 export type ProxiesMongoModel = {
   _id?: MongoDB.ObjectId;
   proxy?: string;
-  total_weight?: MongoDB.Long;
+  total_weight?: number;
   [key: string]: unknown;
 };
 
@@ -28,7 +28,7 @@ export type ProxiesMongoModel = {
  */
 export type ProxiesRawModel = {
   proxy?: string;
-  total_weight?: bigint;
+  total_weight?: number;
   [key: string]: unknown;
 };
 

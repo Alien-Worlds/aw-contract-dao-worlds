@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 07:42:05 GMT
+ * Last updated on: Tue, 11 Jul 2023 10:01:26 GMT
  */
 
 
@@ -146,10 +146,10 @@ import { DaoWorldsActionName } from '../../domain/enums';
 
 // Mongo Mapper
 export class DaoWorldsActionMongoMapper
-  extends MapperImpl<ContractAction<DataEntityType>, DaoWorldsActionMongoModel>
+  extends MapperImpl<ContractAction<DataEntityType, DaoWorldsActionMongoModel>, DaoWorldsActionMongoModel>
 {
   public fromEntity(
-    entity: ContractAction<DataEntityType>
+    entity: ContractAction<DataEntityType, DaoWorldsActionMongoModel>
   ): DaoWorldsActionMongoModel {
     let entityData;
     switch (entity.name) {
@@ -327,7 +327,7 @@ export class DaoWorldsActionMongoMapper
 
   public toEntity(
     mongoModel: DaoWorldsActionMongoModel
-  ): ContractAction<DataEntityType> {
+  ): ContractAction<DataEntityType, DaoWorldsActionMongoModel> {
     let data;
     switch (mongoModel.action.name) {
       case DaoWorldsActionName.Appointcust:
@@ -497,7 +497,7 @@ export class DaoWorldsActionMongoMapper
       action,
     } = mongoModel;
 
-    return new ContractAction<DataEntityType>(
+    return new ContractAction<DataEntityType, DaoWorldsActionMongoModel>(
       _id.toString(),
       block_timestamp,
       parseToBigInt(block_number),

@@ -1,12 +1,9 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 07:42:05 GMT
+ * Last updated on: Tue, 11 Jul 2023 10:01:27 GMT
  */
 
-import {
-  MapperImpl,
-  parseToBigInt,
-} from '@alien-worlds/api-core';
+import { MapperImpl } from '@alien-worlds/api-core';
 import { MongoDB } from '@alien-worlds/storage-mongodb';
 import { Proxies  } from "../../domain/entities";
 import { ProxiesMongoModel, ProxiesRawModel  } from "../dtos/proxies.dto";
@@ -26,7 +23,8 @@ export class ProxiesMongoMapper
 
     this.mappingFromEntity.set('totalWeight', { 
       key: 'total_weight', 
-      mapper: (value: bigint) => MongoDB.Long.fromBigInt(value),
+      mapper: (value: number) => 
+        value,
     });
 
   }
@@ -41,7 +39,7 @@ export class ProxiesMongoMapper
 
     return Proxies.create(
         proxy ?? '',
-        total_weight.toBigInt() ?? 0n,
+        total_weight ?? 0,
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -66,7 +64,7 @@ export class ProxiesRawMapper
 
     return Proxies.create(
         proxy ?? '',
-      parseToBigInt(total_weight ?? 0n),
+        total_weight ?? 0,
       undefined,
       rest
     );

@@ -1,12 +1,9 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 07:42:05 GMT
+ * Last updated on: Tue, 11 Jul 2023 10:01:27 GMT
  */
 
-import {
-  MapperImpl,
-  parseToBigInt,
-} from '@alien-worlds/api-core';
+import { MapperImpl } from '@alien-worlds/api-core';
 import { MongoDB } from '@alien-worlds/storage-mongodb';
 import { ExtendedAsset, ExtendedAssetMongoMapper, ExtendedAssetRawMapper } from '@alien-worlds/eosio-contract-types';
 import { Pendingpay  } from "../../domain/entities";
@@ -21,7 +18,8 @@ export class PendingpayMongoMapper
 
     this.mappingFromEntity.set('key', { 
       key: 'key', 
-      mapper: (value: bigint) => MongoDB.Long.fromBigInt(value),
+      mapper: (value: number) => 
+        value,
     });
 
     this.mappingFromEntity.set('receiver', { 
@@ -48,7 +46,7 @@ export class PendingpayMongoMapper
     } = mongoModel;
 
     return Pendingpay.create(
-        key.toBigInt() ?? 0n,
+        key ?? 0,
         receiver ?? '',
         quantity 
           ? new ExtendedAssetMongoMapper().toEntity(quantity)
@@ -77,7 +75,7 @@ export class PendingpayRawMapper
     } = rawModel;
 
     return Pendingpay.create(
-      parseToBigInt(key ?? 0n),
+        key ?? 0,
         receiver ?? '',
         quantity 
           ? new ExtendedAssetRawMapper().toEntity(quantity)

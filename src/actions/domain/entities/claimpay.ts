@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 07:42:05 GMT
+ * Last updated on: Tue, 11 Jul 2023 10:01:26 GMT
  */
 
 import { Entity, UnknownObject } from "@alien-worlds/api-core";
@@ -16,13 +16,13 @@ export class Claimpay implements Entity {
    *
    * @public
    * @constructor
-   * @param bigint payid
+   * @param number payid
    * @param string dacId
    * @param string [id]
    * @returns `Claimpay` - An instance of the `Claimpay` class.
    */
   public constructor(
-    public payid: bigint,
+    public payid: number,
     public dacId: string,
     public id?: string,
   ) {}
@@ -50,7 +50,7 @@ export class Claimpay implements Entity {
    * @returns `Claimpay` An instance of the `Claimpay` class.
    */
   public static create(
-    payid: bigint,
+    payid: number,
     dacId: string,
     id?: string,
     rest?: UnknownObject
@@ -67,7 +67,7 @@ export class Claimpay implements Entity {
 
   public static getDefault(): Claimpay {
     return new Claimpay(
-      0n,
+      0,
       '',
     );
   }

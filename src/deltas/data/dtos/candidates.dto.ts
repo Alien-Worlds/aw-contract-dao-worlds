@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 07:42:05 GMT
+ * Last updated on: Tue, 11 Jul 2023 10:01:27 GMT
  */
 
 import { MongoDB } from '@alien-worlds/storage-mongodb';
@@ -17,13 +17,13 @@ export type CandidatesMongoModel = {
   _id?: MongoDB.ObjectId;
   candidate_name?: string;
   requestedpay?: AssetMongoModel;
-  rank?: MongoDB.Long;
-  gap_filler?: MongoDB.Long;
-  total_vote_power?: MongoDB.Long;
+  rank?: number;
+  gap_filler?: number;
+  total_vote_power?: number;
   is_active?: number;
   number_voters?: number;
   avg_vote_time_stamp?: Date;
-  running_weight_time?: MongoDB.Long;
+  running_weight_time?: number;
   [key: string]: unknown;
 };
 
@@ -37,13 +37,13 @@ export type CandidatesMongoModel = {
 export type CandidatesRawModel = {
   candidate_name?: string;
   requestedpay?: AssetRawModel;
-  rank?: bigint;
-  gap_filler?: bigint;
-  total_vote_power?: bigint;
+  rank?: number;
+  gap_filler?: number;
+  total_vote_power?: number;
   is_active?: number;
   number_voters?: number;
   avg_vote_time_stamp?: Date;
-  running_weight_time?: bigint;
+  running_weight_time?: number;
   [key: string]: unknown;
 };
 

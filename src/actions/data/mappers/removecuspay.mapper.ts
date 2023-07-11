@@ -1,12 +1,9 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 07:42:05 GMT
+ * Last updated on: Tue, 11 Jul 2023 10:01:26 GMT
  */
 
-import {
-  MapperImpl,
-  parseToBigInt,
-} from '@alien-worlds/api-core';
+import { MapperImpl } from '@alien-worlds/api-core';
 import { MongoDB } from '@alien-worlds/storage-mongodb';
 import { Removecuspay  } from "../../domain/entities";
 import { RemovecuspayMongoModel, RemovecuspayRawModel  } from "../dtos/removecuspay.dto";
@@ -20,7 +17,8 @@ export class RemovecuspayMongoMapper
 
     this.mappingFromEntity.set('payid', { 
       key: 'payid', 
-      mapper: (value: bigint) => MongoDB.Long.fromBigInt(value),
+      mapper: (value: number) => 
+        value,
     });
 
     this.mappingFromEntity.set('dacId', { 
@@ -40,7 +38,7 @@ export class RemovecuspayMongoMapper
     } = mongoModel;
 
     return Removecuspay.create(
-        payid.toBigInt() ?? 0n,
+        payid ?? 0,
         dac_id ?? '',
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
@@ -65,7 +63,7 @@ export class RemovecuspayRawMapper
     } = rawModel;
 
     return Removecuspay.create(
-      parseToBigInt(payid ?? 0n),
+        payid ?? 0,
         dac_id ?? '',
       undefined,
       rest

@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 07:42:05 GMT
+ * Last updated on: Tue, 11 Jul 2023 10:01:27 GMT
  */
 
 import { MongoDB } from '@alien-worlds/storage-mongodb';
@@ -15,7 +15,7 @@ import { ExtendedAssetMongoModel, ExtendedAssetRawModel } from '@alien-worlds/eo
  */
 export type PendingpayMongoModel = {
   _id?: MongoDB.ObjectId;
-  key?: MongoDB.Long;
+  key?: number;
   receiver?: string;
   quantity?: ExtendedAssetMongoModel;
   [key: string]: unknown;
@@ -29,7 +29,7 @@ export type PendingpayMongoModel = {
  * @typedef {Object} PendingpayRawModel
  */
 export type PendingpayRawModel = {
-  key?: bigint;
+  key?: number;
   receiver?: string;
   quantity?: ExtendedAssetRawModel;
   [key: string]: unknown;

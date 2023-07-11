@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 07:42:05 GMT
+ * Last updated on: Tue, 11 Jul 2023 10:01:27 GMT
  */
 
 import { Entity, UnknownObject } from "@alien-worlds/api-core";
@@ -86,15 +86,15 @@ export class AccountWeightDelta implements Entity {
    * @public
    * @constructor
    * @param string account
-   * @param bigint weightDelta
-   * @param bigint weightDeltaQuorum
+   * @param number weightDelta
+   * @param number weightDeltaQuorum
    * @param string [id]
    * @returns `AccountWeightDelta` - An instance of the `AccountWeightDelta` class.
    */
   public constructor(
     public account: string,
-    public weightDelta: bigint,
-    public weightDeltaQuorum: bigint,
+    public weightDelta: number,
+    public weightDeltaQuorum: number,
     public id?: string,
   ) {}
 
@@ -123,8 +123,8 @@ export class AccountWeightDelta implements Entity {
    */
   public static create(
     account: string,
-    weightDelta: bigint,
-    weightDeltaQuorum: bigint,
+    weightDelta: number,
+    weightDeltaQuorum: number,
     id?: string,
     rest?: UnknownObject
   ): AccountWeightDelta {
@@ -142,8 +142,8 @@ export class AccountWeightDelta implements Entity {
   public static getDefault(): AccountWeightDelta {
     return new AccountWeightDelta(
       '',
-      0n,
-      0n,
+      0,
+      0,
     );
   }
 }

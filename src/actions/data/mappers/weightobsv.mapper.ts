@@ -1,12 +1,9 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 07:42:05 GMT
+ * Last updated on: Tue, 11 Jul 2023 10:01:26 GMT
  */
 
-import {
-  MapperImpl,
-  parseToBigInt,
-} from '@alien-worlds/api-core';
+import { MapperImpl } from '@alien-worlds/api-core';
 import { MongoDB } from '@alien-worlds/storage-mongodb';
 import { Weightobsv,  AccountWeightDelta  } from "../../domain/entities";
 import { WeightobsvMongoModel, WeightobsvRawModel,  AccountWeightDeltaMongoModel, AccountWeightDeltaRawModel  } from "../dtos/weightobsv.dto";
@@ -64,12 +61,14 @@ export class AccountWeightDeltaMongoMapper
 
     this.mappingFromEntity.set('weightDelta', { 
       key: 'weight_delta', 
-      mapper: (value: bigint) => MongoDB.Long.fromBigInt(value),
+      mapper: (value: number) => 
+        value,
     });
 
     this.mappingFromEntity.set('weightDeltaQuorum', { 
       key: 'weight_delta_quorum', 
-      mapper: (value: bigint) => MongoDB.Long.fromBigInt(value),
+      mapper: (value: number) => 
+        value,
     });
 
   }
@@ -85,8 +84,8 @@ export class AccountWeightDeltaMongoMapper
 
     return AccountWeightDelta.create(
         account ?? '',
-        weight_delta.toBigInt() ?? 0n,
-        weight_delta_quorum.toBigInt() ?? 0n,
+        weight_delta ?? 0,
+        weight_delta_quorum ?? 0,
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -136,8 +135,8 @@ export class AccountWeightDeltaRawMapper
 
     return AccountWeightDelta.create(
         account ?? '',
-      parseToBigInt(weight_delta ?? 0n),
-      parseToBigInt(weight_delta_quorum ?? 0n),
+        weight_delta ?? 0,
+        weight_delta_quorum ?? 0,
       undefined,
       rest
     );

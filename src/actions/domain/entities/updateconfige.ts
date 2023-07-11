@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 07:42:05 GMT
+ * Last updated on: Tue, 11 Jul 2023 10:01:26 GMT
  */
 
 import { Entity, UnknownObject } from "@alien-worlds/api-core";
@@ -91,7 +91,7 @@ export class ContrConfig implements Entity {
    * @param number periodlength
    * @param boolean shouldPayViaServiceProvider
    * @param number initialVoteQuorumPercent
-   * @param bigint tokenSupplyTheshold
+   * @param number tokenSupplyTheshold
    * @param number voteQuorumPercent
    * @param number authThresholdHigh
    * @param number authThresholdMid
@@ -108,7 +108,7 @@ export class ContrConfig implements Entity {
     public periodlength: number,
     public shouldPayViaServiceProvider: boolean,
     public initialVoteQuorumPercent: number,
-    public tokenSupplyTheshold: bigint,
+    public tokenSupplyTheshold: number,
     public voteQuorumPercent: number,
     public authThresholdHigh: number,
     public authThresholdMid: number,
@@ -158,7 +158,7 @@ export class ContrConfig implements Entity {
     periodlength: number,
     shouldPayViaServiceProvider: boolean,
     initialVoteQuorumPercent: number,
-    tokenSupplyTheshold: bigint,
+    tokenSupplyTheshold: number,
     voteQuorumPercent: number,
     authThresholdHigh: number,
     authThresholdMid: number,
@@ -197,7 +197,7 @@ export class ContrConfig implements Entity {
       0,
       false,
       0,
-      0n,
+      0,
       0,
       0,
       0,

@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 07:42:05 GMT
+ * Last updated on: Tue, 11 Jul 2023 10:01:27 GMT
  */
 
 import { Entity, UnknownObject } from "@alien-worlds/api-core";
@@ -19,9 +19,9 @@ export class Candidates2 implements Entity {
    * @constructor
    * @param string candidateName
    * @param Asset requestedpay
-   * @param bigint rank
-   * @param bigint gapFiller
-   * @param bigint totalVotePower
+   * @param number rank
+   * @param number gapFiller
+   * @param number totalVotePower
    * @param number isActive
    * @param number numberVoters
    * @param Date avgVoteTimeStamp
@@ -31,9 +31,9 @@ export class Candidates2 implements Entity {
   public constructor(
     public candidateName: string,
     public requestedpay: Asset,
-    public rank: bigint,
-    public gapFiller: bigint,
-    public totalVotePower: bigint,
+    public rank: number,
+    public gapFiller: number,
+    public totalVotePower: number,
     public isActive: number,
     public numberVoters: number,
     public avgVoteTimeStamp: Date,
@@ -71,9 +71,9 @@ export class Candidates2 implements Entity {
   public static create(
     candidateName: string,
     requestedpay: Asset,
-    rank: bigint,
-    gapFiller: bigint,
-    totalVotePower: bigint,
+    rank: number,
+    gapFiller: number,
+    totalVotePower: number,
     isActive: number,
     numberVoters: number,
     avgVoteTimeStamp: Date,
@@ -100,9 +100,9 @@ export class Candidates2 implements Entity {
     return new Candidates2(
       '',
       Asset.getDefault(),
-      0n,
-      0n,
-      0n,
+      0,
+      0,
+      0,
       0,
       0,
       new Date(0),

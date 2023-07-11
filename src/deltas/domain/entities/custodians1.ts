@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 07:42:05 GMT
+ * Last updated on: Tue, 11 Jul 2023 10:01:27 GMT
  */
 
 import { Entity, UnknownObject } from "@alien-worlds/api-core";
@@ -19,8 +19,8 @@ export class Custodians1 implements Entity {
    * @constructor
    * @param string custName
    * @param Asset requestedpay
-   * @param bigint totalVotePower
-   * @param bigint rank
+   * @param number totalVotePower
+   * @param number rank
    * @param number numberVoters
    * @param Date avgVoteTimeStamp
    * @param string [id]
@@ -29,8 +29,8 @@ export class Custodians1 implements Entity {
   public constructor(
     public custName: string,
     public requestedpay: Asset,
-    public totalVotePower: bigint,
-    public rank: bigint,
+    public totalVotePower: number,
+    public rank: number,
     public numberVoters: number,
     public avgVoteTimeStamp: Date,
     public id?: string,
@@ -65,8 +65,8 @@ export class Custodians1 implements Entity {
   public static create(
     custName: string,
     requestedpay: Asset,
-    totalVotePower: bigint,
-    rank: bigint,
+    totalVotePower: number,
+    rank: number,
     numberVoters: number,
     avgVoteTimeStamp: Date,
     id?: string,
@@ -90,8 +90,8 @@ export class Custodians1 implements Entity {
     return new Custodians1(
       '',
       Asset.getDefault(),
-      0n,
-      0n,
+      0,
+      0,
       0,
       new Date(0),
     );

@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 07:42:05 GMT
+ * Last updated on: Tue, 11 Jul 2023 10:01:27 GMT
  */
 
 import { Entity, UnknownObject } from "@alien-worlds/api-core";
@@ -17,14 +17,14 @@ export class Pendingpay implements Entity {
    *
    * @public
    * @constructor
-   * @param bigint key
+   * @param number key
    * @param string receiver
    * @param ExtendedAsset quantity
    * @param string [id]
    * @returns `Pendingpay` - An instance of the `Pendingpay` class.
    */
   public constructor(
-    public key: bigint,
+    public key: number,
     public receiver: string,
     public quantity: ExtendedAsset,
     public id?: string,
@@ -54,7 +54,7 @@ export class Pendingpay implements Entity {
    * @returns `Pendingpay` An instance of the `Pendingpay` class.
    */
   public static create(
-    key: bigint,
+    key: number,
     receiver: string,
     quantity: ExtendedAsset,
     id?: string,
@@ -73,7 +73,7 @@ export class Pendingpay implements Entity {
 
   public static getDefault(): Pendingpay {
     return new Pendingpay(
-      0n,
+      0,
       '',
       ExtendedAsset.getDefault(),
     );

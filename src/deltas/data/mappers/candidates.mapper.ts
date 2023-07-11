@@ -1,12 +1,9 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 07:42:05 GMT
+ * Last updated on: Tue, 11 Jul 2023 10:01:27 GMT
  */
 
-import {
-  MapperImpl,
-  parseToBigInt,
-} from '@alien-worlds/api-core';
+import { MapperImpl } from '@alien-worlds/api-core';
 import { MongoDB } from '@alien-worlds/storage-mongodb';
 import { Asset, AssetMongoMapper, AssetRawMapper } from '@alien-worlds/eosio-contract-types';
 import { Candidates  } from "../../domain/entities";
@@ -33,17 +30,20 @@ export class CandidatesMongoMapper
 
     this.mappingFromEntity.set('rank', { 
       key: 'rank', 
-      mapper: (value: bigint) => MongoDB.Long.fromBigInt(value),
+      mapper: (value: number) => 
+        value,
     });
 
     this.mappingFromEntity.set('gapFiller', { 
       key: 'gap_filler', 
-      mapper: (value: bigint) => MongoDB.Long.fromBigInt(value),
+      mapper: (value: number) => 
+        value,
     });
 
     this.mappingFromEntity.set('totalVotePower', { 
       key: 'total_vote_power', 
-      mapper: (value: bigint) => MongoDB.Long.fromBigInt(value),
+      mapper: (value: number) => 
+        value,
     });
 
     this.mappingFromEntity.set('isActive', { 
@@ -66,7 +66,8 @@ export class CandidatesMongoMapper
 
     this.mappingFromEntity.set('runningWeightTime', { 
       key: 'running_weight_time', 
-      mapper: (value: bigint) => MongoDB.Long.fromBigInt(value),
+      mapper: (value: number) => 
+        value,
     });
 
   }
@@ -91,13 +92,13 @@ export class CandidatesMongoMapper
         requestedpay 
           ? new AssetMongoMapper().toEntity(requestedpay)
           : Asset.getDefault(),
-        rank.toBigInt() ?? 0n,
-        gap_filler.toBigInt() ?? 0n,
-        total_vote_power.toBigInt() ?? 0n,
+        rank ?? 0,
+        gap_filler ?? 0,
+        total_vote_power ?? 0,
         is_active ?? 0,
         number_voters ?? 0,
         avg_vote_time_stamp ?? new Date(0),
-        running_weight_time.toBigInt() ?? 0n,
+        running_weight_time ?? 0,
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -132,13 +133,13 @@ export class CandidatesRawMapper
         requestedpay 
           ? new AssetRawMapper().toEntity(requestedpay)
           : Asset.getDefault(),
-      parseToBigInt(rank ?? 0n),
-      parseToBigInt(gap_filler ?? 0n),
-      parseToBigInt(total_vote_power ?? 0n),
+        rank ?? 0,
+        gap_filler ?? 0,
+        total_vote_power ?? 0,
         is_active ?? 0,
         number_voters ?? 0,
         avg_vote_time_stamp ?? new Date(0),
-      parseToBigInt(running_weight_time ?? 0n),
+        running_weight_time ?? 0,
       undefined,
       rest
     );

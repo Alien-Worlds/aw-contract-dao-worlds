@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Mon, 10 Jul 2023 07:42:05 GMT
+ * Last updated on: Tue, 11 Jul 2023 10:01:26 GMT
  */
 
 import { MongoDB } from '@alien-worlds/storage-mongodb';
@@ -31,7 +31,7 @@ export type ContrConfigMongoModel = {
   periodlength?: number;
   should_pay_via_service_provider?: boolean;
   initial_vote_quorum_percent?: number;
-  token_supply_theshold?: MongoDB.Long;
+  token_supply_theshold?: number;
   vote_quorum_percent?: number;
   auth_threshold_high?: number;
   auth_threshold_mid?: number;
@@ -64,7 +64,7 @@ export type ContrConfigRawModel = {
   periodlength?: number;
   should_pay_via_service_provider?: boolean;
   initial_vote_quorum_percent?: number;
-  token_supply_theshold?: bigint;
+  token_supply_theshold?: number;
   vote_quorum_percent?: number;
   auth_threshold_high?: number;
   auth_threshold_mid?: number;
