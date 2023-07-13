@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 11 Jul 2023 10:01:26 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
@@ -17,14 +17,12 @@ export class SetbudgetMongoMapper
 
     this.mappingFromEntity.set('dacId', { 
       key: 'dac_id', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('percentage', { 
       key: 'percentage', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
   }
@@ -33,13 +31,13 @@ export class SetbudgetMongoMapper
     const { 
       dac_id,
       percentage,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return Setbudget.create(
-        dac_id ?? '',
-        percentage ?? 0,
+      dac_id || '',
+      percentage || 0,
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -63,8 +61,8 @@ export class SetbudgetRawMapper
     } = rawModel;
 
     return Setbudget.create(
-        dac_id ?? '',
-        percentage ?? 0,
+      dac_id || '',
+      percentage || 0,
       undefined,
       rest
     );

@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 11 Jul 2023 10:01:26 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
@@ -18,14 +18,12 @@ export class BalanceobsvMongoMapper
 
     this.mappingFromEntity.set('accountBalanceDeltas', { 
       key: 'account_balance_deltas', 
-      mapper: (value: AccountBalanceDelta[]) => 
-        value.map(new AccountBalanceDeltaMongoMapper().fromEntity),
+      mapper: (values: AccountBalanceDelta[]) => values.map(value => new AccountBalanceDeltaMongoMapper().fromEntity(value)),
     });
 
     this.mappingFromEntity.set('dacId', { 
       key: 'dac_id', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
   }
@@ -34,14 +32,13 @@ export class BalanceobsvMongoMapper
     const { 
       account_balance_deltas,
       dac_id,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return Balanceobsv.create(
-        account_balance_deltas?.map(new AccountBalanceDeltaMongoMapper().toEntity) ?? []
-,
-        dac_id ?? '',
+      account_balance_deltas?.map(value => new AccountBalanceDeltaMongoMapper().toEntity(value)) || [],
+      dac_id || '',
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -56,14 +53,12 @@ export class AccountBalanceDeltaMongoMapper
 
     this.mappingFromEntity.set('account', { 
       key: 'account', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('balanceDelta', { 
       key: 'balance_delta', 
-      mapper: (value: Asset) => 
-           new AssetMongoMapper().fromEntity(value)
+      mapper: (value: Asset) => new AssetMongoMapper().fromEntity(value),
     });
 
   }
@@ -72,15 +67,13 @@ export class AccountBalanceDeltaMongoMapper
     const { 
       account,
       balance_delta,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return AccountBalanceDelta.create(
-        account ?? '',
-        balance_delta 
-          ? new AssetMongoMapper().toEntity(balance_delta)
-          : Asset.getDefault(),
+      account || '',
+      new AssetMongoMapper().toEntity(balance_delta),
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -104,9 +97,8 @@ export class BalanceobsvRawMapper
     } = rawModel;
 
     return Balanceobsv.create(
-        account_balance_deltas?.map(new AccountBalanceDeltaRawMapper().toEntity) ?? []
-,
-        dac_id ?? '',
+      account_balance_deltas?.map(value => new AccountBalanceDeltaRawMapper().toEntity(value)) || [],
+      dac_id || '',
       undefined,
       rest
     );
@@ -128,10 +120,8 @@ export class AccountBalanceDeltaRawMapper
     } = rawModel;
 
     return AccountBalanceDelta.create(
-        account ?? '',
-        balance_delta 
-          ? new AssetRawMapper().toEntity(balance_delta)
-          : Asset.getDefault(),
+      account || '',
+      new AssetRawMapper().toEntity(balance_delta),
       undefined,
       rest
     );

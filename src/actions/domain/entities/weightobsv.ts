@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 11 Jul 2023 10:01:27 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
  */
 
 import { Entity, UnknownObject } from "@alien-worlds/api-core";
@@ -47,6 +47,8 @@ export class Weightobsv implements Entity {
    *
    * @static
    * @public
+   * @param AccountWeightDelta[] accountWeightDeltas
+   * @param string dacId
    * @returns `Weightobsv` An instance of the `Weightobsv` class.
    */
   public static create(
@@ -58,7 +60,7 @@ export class Weightobsv implements Entity {
     const entity = new Weightobsv(
       accountWeightDeltas,
       dacId,
-      id
+      id,
     );
     entity.rest = rest;
 
@@ -119,6 +121,9 @@ export class AccountWeightDelta implements Entity {
    *
    * @static
    * @public
+   * @param string account
+   * @param number weightDelta
+   * @param number weightDeltaQuorum
    * @returns `AccountWeightDelta` An instance of the `AccountWeightDelta` class.
    */
   public static create(
@@ -132,7 +137,7 @@ export class AccountWeightDelta implements Entity {
       account,
       weightDelta,
       weightDeltaQuorum,
-      id
+      id,
     );
     entity.rest = rest;
 

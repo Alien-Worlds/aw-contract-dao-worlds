@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 11 Jul 2023 10:01:27 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
  */
 
 import { Entity, UnknownObject } from "@alien-worlds/api-core";
@@ -47,6 +47,8 @@ export class Candperms implements Entity {
    *
    * @static
    * @public
+   * @param string cand
+   * @param string permission
    * @returns `Candperms` An instance of the `Candperms` class.
    */
   public static create(
@@ -58,7 +60,7 @@ export class Candperms implements Entity {
     const entity = new Candperms(
       cand,
       permission,
-      id
+      id,
     );
     entity.rest = rest;
 

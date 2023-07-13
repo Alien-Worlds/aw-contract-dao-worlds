@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 11 Jul 2023 10:01:26 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
@@ -18,12 +18,12 @@ export class UpdateconfigeMongoMapper
 
     this.mappingFromEntity.set('newConfig', { 
       key: 'new_config', 
-      mapper:          new ContrConfigMongoMapper().fromEntity,    });
+      mapper: (value: ContrConfig) => new ContrConfigMongoMapper().fromEntity(value),
+    });
 
     this.mappingFromEntity.set('dacId', { 
       key: 'dac_id', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
   }
@@ -32,15 +32,13 @@ export class UpdateconfigeMongoMapper
     const { 
       new_config,
       dac_id,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return Updateconfige.create(
-        new_config
-          ? new ContrConfigMongoMapper().toEntity(new_config)
-          : ContrConfig.getDefault(),
-        dac_id ?? '',
+      new ContrConfigMongoMapper().toEntity(new_config),
+      dac_id || '',
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -55,80 +53,67 @@ export class ContrConfigMongoMapper
 
     this.mappingFromEntity.set('lockupasset', { 
       key: 'lockupasset', 
-      mapper: (value: ExtendedAsset) => 
-           new ExtendedAssetMongoMapper().fromEntity(value)
+      mapper: (value: ExtendedAsset) => new ExtendedAssetMongoMapper().fromEntity(value),
     });
 
     this.mappingFromEntity.set('maxvotes', { 
       key: 'maxvotes', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
     this.mappingFromEntity.set('numelected', { 
       key: 'numelected', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
     this.mappingFromEntity.set('periodlength', { 
       key: 'periodlength', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
     this.mappingFromEntity.set('shouldPayViaServiceProvider', { 
       key: 'should_pay_via_service_provider', 
-      mapper: (value: boolean) => 
-        value,
+      mapper: (value: boolean) => value,
     });
 
     this.mappingFromEntity.set('initialVoteQuorumPercent', { 
       key: 'initial_vote_quorum_percent', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
     this.mappingFromEntity.set('tokenSupplyTheshold', { 
       key: 'token_supply_theshold', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
     this.mappingFromEntity.set('voteQuorumPercent', { 
       key: 'vote_quorum_percent', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
     this.mappingFromEntity.set('authThresholdHigh', { 
       key: 'auth_threshold_high', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
     this.mappingFromEntity.set('authThresholdMid', { 
       key: 'auth_threshold_mid', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
     this.mappingFromEntity.set('authThresholdLow', { 
       key: 'auth_threshold_low', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
     this.mappingFromEntity.set('lockupReleaseTimeDelay', { 
       key: 'lockup_release_time_delay', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
     this.mappingFromEntity.set('requestedPayMax', { 
       key: 'requested_pay_max', 
-      mapper: (value: ExtendedAsset) => 
-           new ExtendedAssetMongoMapper().fromEntity(value)
+      mapper: (value: ExtendedAsset) => new ExtendedAssetMongoMapper().fromEntity(value),
     });
 
   }
@@ -148,28 +133,24 @@ export class ContrConfigMongoMapper
       auth_threshold_low,
       lockup_release_time_delay,
       requested_pay_max,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return ContrConfig.create(
-        lockupasset 
-          ? new ExtendedAssetMongoMapper().toEntity(lockupasset)
-          : ExtendedAsset.getDefault(),
-        maxvotes ?? 0,
-        numelected ?? 0,
-        periodlength ?? 0,
-        should_pay_via_service_provider ?? false,
-        initial_vote_quorum_percent ?? 0,
-        token_supply_theshold ?? 0,
-        vote_quorum_percent ?? 0,
-        auth_threshold_high ?? 0,
-        auth_threshold_mid ?? 0,
-        auth_threshold_low ?? 0,
-        lockup_release_time_delay ?? 0,
-        requested_pay_max 
-          ? new ExtendedAssetMongoMapper().toEntity(requested_pay_max)
-          : ExtendedAsset.getDefault(),
+      new ExtendedAssetMongoMapper().toEntity(lockupasset),
+      maxvotes || 0,
+      numelected || 0,
+      periodlength || 0,
+      should_pay_via_service_provider || false,
+      initial_vote_quorum_percent || 0,
+      token_supply_theshold || 0,
+      vote_quorum_percent || 0,
+      auth_threshold_high || 0,
+      auth_threshold_mid || 0,
+      auth_threshold_low || 0,
+      lockup_release_time_delay || 0,
+      new ExtendedAssetMongoMapper().toEntity(requested_pay_max),
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -193,10 +174,8 @@ export class UpdateconfigeRawMapper
     } = rawModel;
 
     return Updateconfige.create(
-        new_config
-          ? new ContrConfigRawMapper().toEntity(new_config)
-          : ContrConfig.getDefault(),
-        dac_id ?? '',
+      new ContrConfigRawMapper().toEntity(new_config),
+      dac_id || '',
       undefined,
       rest
     );
@@ -229,23 +208,19 @@ export class ContrConfigRawMapper
     } = rawModel;
 
     return ContrConfig.create(
-        lockupasset 
-          ? new ExtendedAssetRawMapper().toEntity(lockupasset)
-          : ExtendedAsset.getDefault(),
-        maxvotes ?? 0,
-        numelected ?? 0,
-        periodlength ?? 0,
-        should_pay_via_service_provider ?? false,
-        initial_vote_quorum_percent ?? 0,
-        token_supply_theshold ?? 0,
-        vote_quorum_percent ?? 0,
-        auth_threshold_high ?? 0,
-        auth_threshold_mid ?? 0,
-        auth_threshold_low ?? 0,
-        lockup_release_time_delay ?? 0,
-        requested_pay_max 
-          ? new ExtendedAssetRawMapper().toEntity(requested_pay_max)
-          : ExtendedAsset.getDefault(),
+      new ExtendedAssetRawMapper().toEntity(lockupasset),
+      maxvotes || 0,
+      numelected || 0,
+      periodlength || 0,
+      should_pay_via_service_provider || false,
+      initial_vote_quorum_percent || 0,
+      token_supply_theshold || 0,
+      vote_quorum_percent || 0,
+      auth_threshold_high || 0,
+      auth_threshold_mid || 0,
+      auth_threshold_low || 0,
+      lockup_release_time_delay || 0,
+      new ExtendedAssetRawMapper().toEntity(requested_pay_max),
       undefined,
       rest
     );

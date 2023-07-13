@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 11 Jul 2023 10:01:27 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
@@ -18,20 +18,17 @@ export class PendingpayMongoMapper
 
     this.mappingFromEntity.set('key', { 
       key: 'key', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
     this.mappingFromEntity.set('receiver', { 
       key: 'receiver', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('quantity', { 
       key: 'quantity', 
-      mapper: (value: ExtendedAsset) => 
-           new ExtendedAssetMongoMapper().fromEntity(value)
+      mapper: (value: ExtendedAsset) => new ExtendedAssetMongoMapper().fromEntity(value),
     });
 
   }
@@ -41,16 +38,14 @@ export class PendingpayMongoMapper
       key,
       receiver,
       quantity,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return Pendingpay.create(
-        key ?? 0,
-        receiver ?? '',
-        quantity 
-          ? new ExtendedAssetMongoMapper().toEntity(quantity)
-          : ExtendedAsset.getDefault(),
+      key || 0,
+      receiver || '',
+      new ExtendedAssetMongoMapper().toEntity(quantity),
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -75,11 +70,9 @@ export class PendingpayRawMapper
     } = rawModel;
 
     return Pendingpay.create(
-        key ?? 0,
-        receiver ?? '',
-        quantity 
-          ? new ExtendedAssetRawMapper().toEntity(quantity)
-          : ExtendedAsset.getDefault(),
+      key || 0,
+      receiver || '',
+      new ExtendedAssetRawMapper().toEntity(quantity),
       undefined,
       rest
     );

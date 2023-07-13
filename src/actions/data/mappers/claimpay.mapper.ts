@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 11 Jul 2023 10:01:26 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
@@ -17,14 +17,12 @@ export class ClaimpayMongoMapper
 
     this.mappingFromEntity.set('payid', { 
       key: 'payid', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
     this.mappingFromEntity.set('dacId', { 
       key: 'dac_id', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
   }
@@ -33,13 +31,13 @@ export class ClaimpayMongoMapper
     const { 
       payid,
       dac_id,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return Claimpay.create(
-        payid ?? 0,
-        dac_id ?? '',
+      payid || 0,
+      dac_id || '',
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -63,8 +61,8 @@ export class ClaimpayRawMapper
     } = rawModel;
 
     return Claimpay.create(
-        payid ?? 0,
-        dac_id ?? '',
+      payid || 0,
+      dac_id || '',
       undefined,
       rest
     );

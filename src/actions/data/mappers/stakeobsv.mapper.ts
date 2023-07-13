@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 11 Jul 2023 10:01:26 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
@@ -18,14 +18,12 @@ export class StakeobsvMongoMapper
 
     this.mappingFromEntity.set('accountStakeDeltas', { 
       key: 'account_stake_deltas', 
-      mapper: (value: AccountStakeDelta[]) => 
-        value.map(new AccountStakeDeltaMongoMapper().fromEntity),
+      mapper: (values: AccountStakeDelta[]) => values.map(value => new AccountStakeDeltaMongoMapper().fromEntity(value)),
     });
 
     this.mappingFromEntity.set('dacId', { 
       key: 'dac_id', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
   }
@@ -34,14 +32,13 @@ export class StakeobsvMongoMapper
     const { 
       account_stake_deltas,
       dac_id,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return Stakeobsv.create(
-        account_stake_deltas?.map(new AccountStakeDeltaMongoMapper().toEntity) ?? []
-,
-        dac_id ?? '',
+      account_stake_deltas?.map(value => new AccountStakeDeltaMongoMapper().toEntity(value)) || [],
+      dac_id || '',
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -56,20 +53,17 @@ export class AccountStakeDeltaMongoMapper
 
     this.mappingFromEntity.set('account', { 
       key: 'account', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('stakeDelta', { 
       key: 'stake_delta', 
-      mapper: (value: Asset) => 
-           new AssetMongoMapper().fromEntity(value)
+      mapper: (value: Asset) => new AssetMongoMapper().fromEntity(value),
     });
 
     this.mappingFromEntity.set('unstakeDelay', { 
       key: 'unstake_delay', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
   }
@@ -79,16 +73,14 @@ export class AccountStakeDeltaMongoMapper
       account,
       stake_delta,
       unstake_delay,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return AccountStakeDelta.create(
-        account ?? '',
-        stake_delta 
-          ? new AssetMongoMapper().toEntity(stake_delta)
-          : Asset.getDefault(),
-        unstake_delay ?? 0,
+      account || '',
+      new AssetMongoMapper().toEntity(stake_delta),
+      unstake_delay || 0,
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -112,9 +104,8 @@ export class StakeobsvRawMapper
     } = rawModel;
 
     return Stakeobsv.create(
-        account_stake_deltas?.map(new AccountStakeDeltaRawMapper().toEntity) ?? []
-,
-        dac_id ?? '',
+      account_stake_deltas?.map(value => new AccountStakeDeltaRawMapper().toEntity(value)) || [],
+      dac_id || '',
       undefined,
       rest
     );
@@ -137,11 +128,9 @@ export class AccountStakeDeltaRawMapper
     } = rawModel;
 
     return AccountStakeDelta.create(
-        account ?? '',
-        stake_delta 
-          ? new AssetRawMapper().toEntity(stake_delta)
-          : Asset.getDefault(),
-        unstake_delay ?? 0,
+      account || '',
+      new AssetRawMapper().toEntity(stake_delta),
+      unstake_delay || 0,
       undefined,
       rest
     );

@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 11 Jul 2023 10:01:26 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
@@ -17,32 +17,27 @@ export class FlagcandprofMongoMapper
 
     this.mappingFromEntity.set('cand', { 
       key: 'cand', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('reason', { 
       key: 'reason', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('reporter', { 
       key: 'reporter', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('block', { 
       key: 'block', 
-      mapper: (value: boolean) => 
-        value,
+      mapper: (value: boolean) => value,
     });
 
     this.mappingFromEntity.set('dacId', { 
       key: 'dac_id', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
   }
@@ -54,16 +49,16 @@ export class FlagcandprofMongoMapper
       reporter,
       block,
       dac_id,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return Flagcandprof.create(
-        cand ?? '',
-        reason ?? '',
-        reporter ?? '',
-        block ?? false,
-        dac_id ?? '',
+      cand || '',
+      reason || '',
+      reporter || '',
+      block || false,
+      dac_id || '',
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -90,11 +85,11 @@ export class FlagcandprofRawMapper
     } = rawModel;
 
     return Flagcandprof.create(
-        cand ?? '',
-        reason ?? '',
-        reporter ?? '',
-        block ?? false,
-        dac_id ?? '',
+      cand || '',
+      reason || '',
+      reporter || '',
+      block || false,
+      dac_id || '',
       undefined,
       rest
     );

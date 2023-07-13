@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 11 Jul 2023 10:01:26 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
  */
 
 import { Entity, UnknownObject } from "@alien-worlds/api-core";
@@ -47,6 +47,8 @@ export class Rejectcuspay implements Entity {
    *
    * @static
    * @public
+   * @param number payid
+   * @param string dacId
    * @returns `Rejectcuspay` An instance of the `Rejectcuspay` class.
    */
   public static create(
@@ -58,7 +60,7 @@ export class Rejectcuspay implements Entity {
     const entity = new Rejectcuspay(
       payid,
       dacId,
-      id
+      id,
     );
     entity.rest = rest;
 

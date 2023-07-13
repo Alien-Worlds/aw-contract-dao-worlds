@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 11 Jul 2023 10:01:27 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
  */
 
 import { Entity, UnknownObject } from "@alien-worlds/api-core";
@@ -51,6 +51,9 @@ export class Pendingpay implements Entity {
    *
    * @static
    * @public
+   * @param number key
+   * @param string receiver
+   * @param ExtendedAsset quantity
    * @returns `Pendingpay` An instance of the `Pendingpay` class.
    */
   public static create(
@@ -64,7 +67,7 @@ export class Pendingpay implements Entity {
       key,
       receiver,
       quantity,
-      id
+      id,
     );
     entity.rest = rest;
 

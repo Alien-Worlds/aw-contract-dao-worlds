@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 11 Jul 2023 10:01:27 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
@@ -17,14 +17,12 @@ export class ProxiesMongoMapper
 
     this.mappingFromEntity.set('proxy', { 
       key: 'proxy', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('totalWeight', { 
       key: 'total_weight', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
   }
@@ -33,13 +31,13 @@ export class ProxiesMongoMapper
     const { 
       proxy,
       total_weight,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return Proxies.create(
-        proxy ?? '',
-        total_weight ?? 0,
+      proxy || '',
+      total_weight || 0,
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -63,8 +61,8 @@ export class ProxiesRawMapper
     } = rawModel;
 
     return Proxies.create(
-        proxy ?? '',
-        total_weight ?? 0,
+      proxy || '',
+      total_weight || 0,
       undefined,
       rest
     );

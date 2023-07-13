@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 11 Jul 2023 10:01:26 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
  */
 
 import { Entity, UnknownObject } from "@alien-worlds/api-core";
@@ -47,6 +47,8 @@ export class Setbudget implements Entity {
    *
    * @static
    * @public
+   * @param string dacId
+   * @param number percentage
    * @returns `Setbudget` An instance of the `Setbudget` class.
    */
   public static create(
@@ -58,7 +60,7 @@ export class Setbudget implements Entity {
     const entity = new Setbudget(
       dacId,
       percentage,
-      id
+      id,
     );
     entity.rest = rest;
 

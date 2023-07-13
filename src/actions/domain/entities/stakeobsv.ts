@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 11 Jul 2023 10:01:26 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
  */
 
 import { Entity, UnknownObject } from "@alien-worlds/api-core";
@@ -48,6 +48,8 @@ export class Stakeobsv implements Entity {
    *
    * @static
    * @public
+   * @param AccountStakeDelta[] accountStakeDeltas
+   * @param string dacId
    * @returns `Stakeobsv` An instance of the `Stakeobsv` class.
    */
   public static create(
@@ -59,7 +61,7 @@ export class Stakeobsv implements Entity {
     const entity = new Stakeobsv(
       accountStakeDeltas,
       dacId,
-      id
+      id,
     );
     entity.rest = rest;
 
@@ -120,6 +122,9 @@ export class AccountStakeDelta implements Entity {
    *
    * @static
    * @public
+   * @param string account
+   * @param Asset stakeDelta
+   * @param number unstakeDelay
    * @returns `AccountStakeDelta` An instance of the `AccountStakeDelta` class.
    */
   public static create(
@@ -133,7 +138,7 @@ export class AccountStakeDelta implements Entity {
       account,
       stakeDelta,
       unstakeDelay,
-      id
+      id,
     );
     entity.rest = rest;
 

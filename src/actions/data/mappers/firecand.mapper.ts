@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 11 Jul 2023 10:01:26 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
@@ -17,20 +17,17 @@ export class FirecandMongoMapper
 
     this.mappingFromEntity.set('cand', { 
       key: 'cand', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('lockupStake', { 
       key: 'lockupStake', 
-      mapper: (value: boolean) => 
-        value,
+      mapper: (value: boolean) => value,
     });
 
     this.mappingFromEntity.set('dacId', { 
       key: 'dac_id', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
   }
@@ -40,14 +37,14 @@ export class FirecandMongoMapper
       cand,
       lockupStake,
       dac_id,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return Firecand.create(
-        cand ?? '',
-        lockupStake ?? false,
-        dac_id ?? '',
+      cand || '',
+      lockupStake || false,
+      dac_id || '',
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -72,9 +69,9 @@ export class FirecandRawMapper
     } = rawModel;
 
     return Firecand.create(
-        cand ?? '',
-        lockupStake ?? false,
-        dac_id ?? '',
+      cand || '',
+      lockupStake || false,
+      dac_id || '',
       undefined,
       rest
     );

@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 11 Jul 2023 10:01:27 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
@@ -18,50 +18,42 @@ export class Candidates2MongoMapper
 
     this.mappingFromEntity.set('candidateName', { 
       key: 'candidate_name', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('requestedpay', { 
       key: 'requestedpay', 
-      mapper: (value: Asset) => 
-           new AssetMongoMapper().fromEntity(value)
+      mapper: (value: Asset) => new AssetMongoMapper().fromEntity(value),
     });
 
     this.mappingFromEntity.set('rank', { 
       key: 'rank', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
     this.mappingFromEntity.set('gapFiller', { 
       key: 'gap_filler', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
     this.mappingFromEntity.set('totalVotePower', { 
       key: 'total_vote_power', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
     this.mappingFromEntity.set('isActive', { 
       key: 'is_active', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
     this.mappingFromEntity.set('numberVoters', { 
       key: 'number_voters', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
     this.mappingFromEntity.set('avgVoteTimeStamp', { 
       key: 'avg_vote_time_stamp', 
-      mapper: (value: Date) => 
-        value,
+      mapper: (value: Date) => value,
     });
 
   }
@@ -76,21 +68,19 @@ export class Candidates2MongoMapper
       is_active,
       number_voters,
       avg_vote_time_stamp,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return Candidates2.create(
-        candidate_name ?? '',
-        requestedpay 
-          ? new AssetMongoMapper().toEntity(requestedpay)
-          : Asset.getDefault(),
-        rank ?? 0,
-        gap_filler ?? 0,
-        total_vote_power ?? 0,
-        is_active ?? 0,
-        number_voters ?? 0,
-        avg_vote_time_stamp ?? new Date(0),
+      candidate_name || '',
+      new AssetMongoMapper().toEntity(requestedpay),
+      rank || 0,
+      gap_filler || 0,
+      total_vote_power || 0,
+      is_active || 0,
+      number_voters || 0,
+      avg_vote_time_stamp || new Date(0),
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -120,16 +110,14 @@ export class Candidates2RawMapper
     } = rawModel;
 
     return Candidates2.create(
-        candidate_name ?? '',
-        requestedpay 
-          ? new AssetRawMapper().toEntity(requestedpay)
-          : Asset.getDefault(),
-        rank ?? 0,
-        gap_filler ?? 0,
-        total_vote_power ?? 0,
-        is_active ?? 0,
-        number_voters ?? 0,
-        avg_vote_time_stamp ?? new Date(0),
+      candidate_name || '',
+      new AssetRawMapper().toEntity(requestedpay),
+      rank || 0,
+      gap_filler || 0,
+      total_vote_power || 0,
+      is_active || 0,
+      number_voters || 0,
+      avg_vote_time_stamp || new Date(0),
       undefined,
       rest
     );

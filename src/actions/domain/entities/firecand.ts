@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 11 Jul 2023 10:01:26 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
  */
 
 import { Entity, UnknownObject } from "@alien-worlds/api-core";
@@ -50,6 +50,9 @@ export class Firecand implements Entity {
    *
    * @static
    * @public
+   * @param string cand
+   * @param boolean lockupStake
+   * @param string dacId
    * @returns `Firecand` An instance of the `Firecand` class.
    */
   public static create(
@@ -63,7 +66,7 @@ export class Firecand implements Entity {
       cand,
       lockupStake,
       dacId,
-      id
+      id,
     );
     entity.rest = rest;
 

@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 11 Jul 2023 10:01:26 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
@@ -17,14 +17,12 @@ export class WeightobsvMongoMapper
 
     this.mappingFromEntity.set('accountWeightDeltas', { 
       key: 'account_weight_deltas', 
-      mapper: (value: AccountWeightDelta[]) => 
-        value.map(new AccountWeightDeltaMongoMapper().fromEntity),
+      mapper: (values: AccountWeightDelta[]) => values.map(value => new AccountWeightDeltaMongoMapper().fromEntity(value)),
     });
 
     this.mappingFromEntity.set('dacId', { 
       key: 'dac_id', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
   }
@@ -33,14 +31,13 @@ export class WeightobsvMongoMapper
     const { 
       account_weight_deltas,
       dac_id,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return Weightobsv.create(
-        account_weight_deltas?.map(new AccountWeightDeltaMongoMapper().toEntity) ?? []
-,
-        dac_id ?? '',
+      account_weight_deltas?.map(value => new AccountWeightDeltaMongoMapper().toEntity(value)) || [],
+      dac_id || '',
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -55,20 +52,17 @@ export class AccountWeightDeltaMongoMapper
 
     this.mappingFromEntity.set('account', { 
       key: 'account', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('weightDelta', { 
       key: 'weight_delta', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
     this.mappingFromEntity.set('weightDeltaQuorum', { 
       key: 'weight_delta_quorum', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
   }
@@ -78,14 +72,14 @@ export class AccountWeightDeltaMongoMapper
       account,
       weight_delta,
       weight_delta_quorum,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return AccountWeightDelta.create(
-        account ?? '',
-        weight_delta ?? 0,
-        weight_delta_quorum ?? 0,
+      account || '',
+      weight_delta || 0,
+      weight_delta_quorum || 0,
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -109,9 +103,8 @@ export class WeightobsvRawMapper
     } = rawModel;
 
     return Weightobsv.create(
-        account_weight_deltas?.map(new AccountWeightDeltaRawMapper().toEntity) ?? []
-,
-        dac_id ?? '',
+      account_weight_deltas?.map(value => new AccountWeightDeltaRawMapper().toEntity(value)) || [],
+      dac_id || '',
       undefined,
       rest
     );
@@ -134,9 +127,9 @@ export class AccountWeightDeltaRawMapper
     } = rawModel;
 
     return AccountWeightDelta.create(
-        account ?? '',
-        weight_delta ?? 0,
-        weight_delta_quorum ?? 0,
+      account || '',
+      weight_delta || 0,
+      weight_delta_quorum || 0,
       undefined,
       rest
     );

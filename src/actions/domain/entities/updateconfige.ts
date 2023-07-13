@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 11 Jul 2023 10:01:26 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
  */
 
 import { Entity, UnknownObject } from "@alien-worlds/api-core";
@@ -48,6 +48,8 @@ export class Updateconfige implements Entity {
    *
    * @static
    * @public
+   * @param ContrConfig newConfig
+   * @param string dacId
    * @returns `Updateconfige` An instance of the `Updateconfige` class.
    */
   public static create(
@@ -59,7 +61,7 @@ export class Updateconfige implements Entity {
     const entity = new Updateconfige(
       newConfig,
       dacId,
-      id
+      id,
     );
     entity.rest = rest;
 
@@ -149,6 +151,19 @@ export class ContrConfig implements Entity {
    *
    * @static
    * @public
+   * @param ExtendedAsset lockupasset
+   * @param number maxvotes
+   * @param number numelected
+   * @param number periodlength
+   * @param boolean shouldPayViaServiceProvider
+   * @param number initialVoteQuorumPercent
+   * @param number tokenSupplyTheshold
+   * @param number voteQuorumPercent
+   * @param number authThresholdHigh
+   * @param number authThresholdMid
+   * @param number authThresholdLow
+   * @param number lockupReleaseTimeDelay
+   * @param ExtendedAsset requestedPayMax
    * @returns `ContrConfig` An instance of the `ContrConfig` class.
    */
   public static create(
@@ -182,7 +197,7 @@ export class ContrConfig implements Entity {
       authThresholdLow,
       lockupReleaseTimeDelay,
       requestedPayMax,
-      id
+      id,
     );
     entity.rest = rest;
 

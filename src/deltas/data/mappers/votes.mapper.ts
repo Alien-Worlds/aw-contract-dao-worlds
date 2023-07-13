@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Tue, 11 Jul 2023 10:01:27 GMT
+ * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
@@ -17,32 +17,27 @@ export class VotesMongoMapper
 
     this.mappingFromEntity.set('voter', { 
       key: 'voter', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('proxy', { 
       key: 'proxy', 
-      mapper: (value: string) => 
-        value,
+      mapper: (value: string) => value,
     });
 
     this.mappingFromEntity.set('candidates', { 
       key: 'candidates', 
-      mapper: (value: string[]) => 
-        value,
+      mapper: (values: string[][]) => values,
     });
 
     this.mappingFromEntity.set('voteTimeStamp', { 
       key: 'vote_time_stamp', 
-      mapper: (value: Date) => 
-        value,
+      mapper: (value: Date) => value,
     });
 
     this.mappingFromEntity.set('voteCount', { 
       key: 'vote_count', 
-      mapper: (value: number) => 
-        value,
+      mapper: (value: number) => value,
     });
 
   }
@@ -54,16 +49,16 @@ export class VotesMongoMapper
       candidates,
       vote_time_stamp,
       vote_count,
-      _id, 
+      _id,
       ...rest
     } = mongoModel;
 
     return Votes.create(
-        voter ?? '',
-        proxy ?? '',
-        candidates ?? [],
-        vote_time_stamp ?? new Date(0),
-        vote_count ?? 0,
+      voter || '',
+      proxy || '',
+      candidates || [],
+      vote_time_stamp || new Date(0),
+      vote_count || 0,
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -90,11 +85,11 @@ export class VotesRawMapper
     } = rawModel;
 
     return Votes.create(
-        voter ?? '',
-        proxy ?? '',
-        candidates ?? [],
-        vote_time_stamp ?? new Date(0),
-        vote_count ?? 0,
+      voter || '',
+      proxy || '',
+      candidates || [],
+      vote_time_stamp || new Date(0),
+      vote_count || 0,
       undefined,
       rest
     );
