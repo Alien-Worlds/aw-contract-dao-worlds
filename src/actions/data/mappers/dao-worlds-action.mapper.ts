@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 17:49:22 GMT
+ * Last updated on: Fri, 14 Jul 2023 19:25:55 GMT
  */
 
 
@@ -310,8 +310,7 @@ export class DaoWorldsActionMongoMapper
         break;
     }
 
-    return {
-      _id: new MongoDB.ObjectId(entity.id),
+    const model: DaoWorldsActionMongoModel = {
       block_timestamp: entity.blockTimestamp,
       block_number: new MongoDB.Long(entity.blockNumber),
       global_sequence: new MongoDB.Long(entity.globalSequence),
@@ -323,6 +322,12 @@ export class DaoWorldsActionMongoMapper
         data: entityData,
       },
     };
+
+    if (entity.id && MongoDB.ObjectId.isValid(entity.id)) {
+      model._id =  new MongoDB.ObjectId(entity.id);
+    }
+
+    return model;
   }
 
   public toEntity(
