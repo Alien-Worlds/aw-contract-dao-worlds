@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:28:18 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
@@ -45,7 +45,7 @@ export class PendingpayMongoMapper
     return Pendingpay.create(
       key || 0,
       receiver || '',
-      new ExtendedAssetMongoMapper().toEntity(quantity),
+      quantity ? new ExtendedAssetMongoMapper().toEntity(quantity) : ExtendedAsset.getDefault(),
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -72,7 +72,7 @@ export class PendingpayRawMapper
     return Pendingpay.create(
       key || 0,
       receiver || '',
-      new ExtendedAssetRawMapper().toEntity(quantity),
+      quantity ? new ExtendedAssetRawMapper().toEntity(quantity) : ExtendedAsset.getDefault(),
       undefined,
       rest
     );

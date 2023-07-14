@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:28:17 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
@@ -79,7 +79,7 @@ export class AccountStakeDeltaMongoMapper
 
     return AccountStakeDelta.create(
       account || '',
-      new AssetMongoMapper().toEntity(stake_delta),
+      stake_delta ? new AssetMongoMapper().toEntity(stake_delta) : Asset.getDefault(),
       unstake_delay || 0,
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
@@ -129,7 +129,7 @@ export class AccountStakeDeltaRawMapper
 
     return AccountStakeDelta.create(
       account || '',
-      new AssetRawMapper().toEntity(stake_delta),
+      stake_delta ? new AssetRawMapper().toEntity(stake_delta) : Asset.getDefault(),
       unstake_delay || 0,
       undefined,
       rest

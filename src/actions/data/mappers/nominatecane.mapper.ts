@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:28:17 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
@@ -44,7 +44,7 @@ export class NominatecaneMongoMapper
 
     return Nominatecane.create(
       cand || '',
-      new AssetMongoMapper().toEntity(requestedpay),
+      requestedpay ? new AssetMongoMapper().toEntity(requestedpay) : Asset.getDefault(),
       dac_id || '',
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
@@ -71,7 +71,7 @@ export class NominatecaneRawMapper
 
     return Nominatecane.create(
       cand || '',
-      new AssetRawMapper().toEntity(requestedpay),
+      requestedpay ? new AssetRawMapper().toEntity(requestedpay) : Asset.getDefault(),
       dac_id || '',
       undefined,
       rest

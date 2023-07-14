@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:28:17 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
@@ -37,7 +37,7 @@ export class UpdateconfigeMongoMapper
     } = mongoModel;
 
     return Updateconfige.create(
-      new ContrConfigMongoMapper().toEntity(new_config),
+      new_config ? new ContrConfigMongoMapper().toEntity(new_config) : ContrConfig.getDefault(),
       dac_id || '',
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
@@ -138,7 +138,7 @@ export class ContrConfigMongoMapper
     } = mongoModel;
 
     return ContrConfig.create(
-      new ExtendedAssetMongoMapper().toEntity(lockupasset),
+      lockupasset ? new ExtendedAssetMongoMapper().toEntity(lockupasset) : ExtendedAsset.getDefault(),
       maxvotes || 0,
       numelected || 0,
       periodlength || 0,
@@ -150,7 +150,7 @@ export class ContrConfigMongoMapper
       auth_threshold_mid || 0,
       auth_threshold_low || 0,
       lockup_release_time_delay || 0,
-      new ExtendedAssetMongoMapper().toEntity(requested_pay_max),
+      requested_pay_max ? new ExtendedAssetMongoMapper().toEntity(requested_pay_max) : ExtendedAsset.getDefault(),
       _id instanceof MongoDB.ObjectId ? _id.toString() : undefined,
       rest
     );
@@ -174,7 +174,7 @@ export class UpdateconfigeRawMapper
     } = rawModel;
 
     return Updateconfige.create(
-      new ContrConfigRawMapper().toEntity(new_config),
+      new_config ? new ContrConfigRawMapper().toEntity(new_config) : ContrConfig.getDefault(),
       dac_id || '',
       undefined,
       rest
@@ -208,7 +208,7 @@ export class ContrConfigRawMapper
     } = rawModel;
 
     return ContrConfig.create(
-      new ExtendedAssetRawMapper().toEntity(lockupasset),
+      lockupasset ? new ExtendedAssetRawMapper().toEntity(lockupasset) : ExtendedAsset.getDefault(),
       maxvotes || 0,
       numelected || 0,
       periodlength || 0,
@@ -220,7 +220,7 @@ export class ContrConfigRawMapper
       auth_threshold_mid || 0,
       auth_threshold_low || 0,
       lockup_release_time_delay || 0,
-      new ExtendedAssetRawMapper().toEntity(requested_pay_max),
+      requested_pay_max ? new ExtendedAssetRawMapper().toEntity(requested_pay_max) : ExtendedAsset.getDefault(),
       undefined,
       rest
     );

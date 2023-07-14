@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:28:17 GMT
  */
 
 import { MongoDB } from '@alien-worlds/storage-mongodb';

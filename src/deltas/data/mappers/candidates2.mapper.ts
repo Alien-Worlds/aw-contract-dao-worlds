@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Thu, 13 Jul 2023 08:27:47 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:28:18 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
@@ -74,7 +74,7 @@ export class Candidates2MongoMapper
 
     return Candidates2.create(
       candidate_name || '',
-      new AssetMongoMapper().toEntity(requestedpay),
+      requestedpay ? new AssetMongoMapper().toEntity(requestedpay) : Asset.getDefault(),
       rank || 0,
       gap_filler || 0,
       total_vote_power || 0,
@@ -111,7 +111,7 @@ export class Candidates2RawMapper
 
     return Candidates2.create(
       candidate_name || '',
-      new AssetRawMapper().toEntity(requestedpay),
+      requestedpay ? new AssetRawMapper().toEntity(requestedpay) : Asset.getDefault(),
       rank || 0,
       gap_filler || 0,
       total_vote_power || 0,
