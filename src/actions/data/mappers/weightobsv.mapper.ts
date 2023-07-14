@@ -1,16 +1,16 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 17:28:17 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:49:22 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
-import { MongoDB } from '@alien-worlds/storage-mongodb';
+import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
 import { Weightobsv,  AccountWeightDelta  } from "../../domain/entities";
 import { WeightobsvMongoModel, WeightobsvRawModel,  AccountWeightDeltaMongoModel, AccountWeightDeltaRawModel  } from "../dtos/weightobsv.dto";
 
 // Mongo Mappers
 export class WeightobsvMongoMapper
-  extends MapperImpl<Weightobsv, WeightobsvMongoModel>
+  extends MongoMapper<Weightobsv, WeightobsvMongoModel>
 {
   constructor() {
     super();
@@ -45,7 +45,7 @@ export class WeightobsvMongoMapper
 }
 
 export class AccountWeightDeltaMongoMapper
-  extends MapperImpl<AccountWeightDelta, AccountWeightDeltaMongoModel>
+  extends MongoMapper<AccountWeightDelta, AccountWeightDeltaMongoModel>
 {
   constructor() {
     super();

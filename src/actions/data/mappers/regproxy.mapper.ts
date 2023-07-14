@@ -1,16 +1,16 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 17:28:17 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:49:22 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
-import { MongoDB } from '@alien-worlds/storage-mongodb';
+import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
 import { Regproxy  } from "../../domain/entities";
 import { RegproxyMongoModel, RegproxyRawModel  } from "../dtos/regproxy.dto";
 
 // Mongo Mappers
 export class RegproxyMongoMapper
-  extends MapperImpl<Regproxy, RegproxyMongoModel>
+  extends MongoMapper<Regproxy, RegproxyMongoModel>
 {
   constructor() {
     super();

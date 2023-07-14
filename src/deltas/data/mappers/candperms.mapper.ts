@@ -1,16 +1,16 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 17:28:18 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:49:22 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
-import { MongoDB } from '@alien-worlds/storage-mongodb';
+import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
 import { Candperms  } from "../../domain/entities";
 import { CandpermsMongoModel, CandpermsRawModel  } from "../dtos/candperms.dto";
 
 // Mongo Mappers
 export class CandpermsMongoMapper
-  extends MapperImpl<Candperms, CandpermsMongoModel>
+  extends MongoMapper<Candperms, CandpermsMongoModel>
 {
   constructor() {
     super();

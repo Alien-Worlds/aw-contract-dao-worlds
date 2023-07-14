@@ -1,16 +1,16 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 17:28:17 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:49:22 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
-import { MongoDB } from '@alien-worlds/storage-mongodb';
+import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
 import { Removecuspay  } from "../../domain/entities";
 import { RemovecuspayMongoModel, RemovecuspayRawModel  } from "../dtos/removecuspay.dto";
 
 // Mongo Mappers
 export class RemovecuspayMongoMapper
-  extends MapperImpl<Removecuspay, RemovecuspayMongoModel>
+  extends MongoMapper<Removecuspay, RemovecuspayMongoModel>
 {
   constructor() {
     super();

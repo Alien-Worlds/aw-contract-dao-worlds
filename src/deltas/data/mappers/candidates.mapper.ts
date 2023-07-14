@@ -1,17 +1,17 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 17:28:18 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:49:22 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
-import { MongoDB } from '@alien-worlds/storage-mongodb';
+import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
 import { Asset, AssetMongoMapper, AssetRawMapper } from '@alien-worlds/eosio-contract-types';
 import { Candidates  } from "../../domain/entities";
 import { CandidatesMongoModel, CandidatesRawModel  } from "../dtos/candidates.dto";
 
 // Mongo Mappers
 export class CandidatesMongoMapper
-  extends MapperImpl<Candidates, CandidatesMongoModel>
+  extends MongoMapper<Candidates, CandidatesMongoModel>
 {
   constructor() {
     super();

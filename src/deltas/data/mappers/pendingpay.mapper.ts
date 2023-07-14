@@ -1,17 +1,17 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 17:28:18 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:49:22 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
-import { MongoDB } from '@alien-worlds/storage-mongodb';
+import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
 import { ExtendedAsset, ExtendedAssetMongoMapper, ExtendedAssetRawMapper } from '@alien-worlds/eosio-contract-types';
 import { Pendingpay  } from "../../domain/entities";
 import { PendingpayMongoModel, PendingpayRawModel  } from "../dtos/pendingpay.dto";
 
 // Mongo Mappers
 export class PendingpayMongoMapper
-  extends MapperImpl<Pendingpay, PendingpayMongoModel>
+  extends MongoMapper<Pendingpay, PendingpayMongoModel>
 {
   constructor() {
     super();

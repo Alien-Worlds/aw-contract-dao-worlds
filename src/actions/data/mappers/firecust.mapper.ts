@@ -1,16 +1,16 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 17:28:17 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:49:22 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
-import { MongoDB } from '@alien-worlds/storage-mongodb';
+import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
 import { Firecust  } from "../../domain/entities";
 import { FirecustMongoModel, FirecustRawModel  } from "../dtos/firecust.dto";
 
 // Mongo Mappers
 export class FirecustMongoMapper
-  extends MapperImpl<Firecust, FirecustMongoModel>
+  extends MongoMapper<Firecust, FirecustMongoModel>
 {
   constructor() {
     super();

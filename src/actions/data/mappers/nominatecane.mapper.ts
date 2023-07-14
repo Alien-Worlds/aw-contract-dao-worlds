@@ -1,17 +1,17 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 17:28:17 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:49:22 GMT
  */
 
 import { MapperImpl } from '@alien-worlds/api-core';
-import { MongoDB } from '@alien-worlds/storage-mongodb';
+import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
 import { Asset, AssetMongoMapper, AssetRawMapper } from '@alien-worlds/eosio-contract-types';
 import { Nominatecane  } from "../../domain/entities";
 import { NominatecaneMongoModel, NominatecaneRawModel  } from "../dtos/nominatecane.dto";
 
 // Mongo Mappers
 export class NominatecaneMongoMapper
-  extends MapperImpl<Nominatecane, NominatecaneMongoModel>
+  extends MongoMapper<Nominatecane, NominatecaneMongoModel>
 {
   constructor() {
     super();

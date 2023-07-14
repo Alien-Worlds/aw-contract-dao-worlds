@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 17:28:17 GMT
+ * Last updated on: Fri, 14 Jul 2023 17:49:22 GMT
  */
 
 
@@ -74,7 +74,7 @@ import { VotecustMongoMapper, VotecustRawMapper } from "./votecust.mapper";
 import { VoteproxyMongoMapper, VoteproxyRawMapper } from "./voteproxy.mapper";
 import { WeightobsvMongoMapper, WeightobsvRawMapper } from "./weightobsv.mapper";
 import { WithdrawcaneMongoMapper, WithdrawcaneRawMapper } from "./withdrawcane.mapper";
-import { MongoDB } from '@alien-worlds/storage-mongodb';
+import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
 import { DataEntityType } from '../../domain/entities/dao-worlds-action';
 import { 
   DaoWorldsActionMongoModel,
@@ -146,7 +146,7 @@ import { DaoWorldsActionName } from '../../domain/enums';
 
 // Mongo Mapper
 export class DaoWorldsActionMongoMapper
-  extends MapperImpl<ContractAction<DataEntityType>, DaoWorldsActionMongoModel>
+  extends MongoMapper<ContractAction<DataEntityType>, DaoWorldsActionMongoModel>
 {
   public fromEntity(
     entity: ContractAction<DataEntityType>
