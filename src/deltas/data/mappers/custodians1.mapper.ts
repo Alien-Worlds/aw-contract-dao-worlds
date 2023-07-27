@@ -1,11 +1,11 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 19:25:56 GMT
+ * Last updated on: Thu, 27 Jul 2023 11:27:11 GMT
  */
 
-import { MapperImpl } from '@alien-worlds/api-core';
-import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
-import { Asset, AssetMongoMapper, AssetRawMapper } from '@alien-worlds/eosio-contract-types';
+import { MapperImpl } from '@alien-worlds/aw-core';
+import { MongoDB, MongoMapper } from '@alien-worlds/aw-storage-mongodb';
+import { Asset, AssetMongoMapper, AssetRawMapper } from '@alien-worlds/aw-antelope';
 import { Custodians1  } from "../../domain/entities";
 import { Custodians1MongoModel, Custodians1RawModel  } from "../dtos/custodians1.dto";
 

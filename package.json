@@ -1,12 +1,12 @@
 {
-  "name": "@alien-worlds/dao-worlds-common",
+  "name": "@alien-worlds/aw-contract-dao-worlds",
   "version": "0.0.23",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "files": [
     "build"
   ],
-  "repository": "https://github.com/Alien-Worlds/dao-worlds-common.git",
+  "repository": "https://github.com/Alien-Worlds/aw-contract-dao-worlds.git",
   "author": "Ahmad Tirmazi <16874651+ahmadtirmazi@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
@@ -17,8 +17,7 @@
   },
   "dependencies": {
     "@alien-worlds/api-core": "^0.0.158",
-    "@alien-worlds/eos": "^0.0.20",
-    "@alien-worlds/eosio-contract-types": "^1.0.25",
+    "@alien-worlds/aw-antelope": "^0.0.24",
     "@alien-worlds/storage-mongodb": "^0.0.28"
   },
   "devDependencies": {

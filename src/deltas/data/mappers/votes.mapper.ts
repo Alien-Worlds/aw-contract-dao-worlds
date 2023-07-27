@@ -1,10 +1,10 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 19:25:56 GMT
+ * Last updated on: Thu, 27 Jul 2023 11:27:11 GMT
  */
 
-import { MapperImpl } from '@alien-worlds/api-core';
-import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
+import { MapperImpl } from '@alien-worlds/aw-core';
+import { MongoDB, MongoMapper } from '@alien-worlds/aw-storage-mongodb';
 import { Votes  } from "../../domain/entities";
 import { VotesMongoModel, VotesRawModel  } from "../dtos/votes.dto";
 

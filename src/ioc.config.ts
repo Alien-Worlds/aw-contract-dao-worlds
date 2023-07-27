@@ -1,14 +1,14 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 19:25:56 GMT
+ * Last updated on: Thu, 27 Jul 2023 11:27:11 GMT
  */
 
-import { Container, RepositoryImpl } from '@alien-worlds/api-core';
+import { Container, RepositoryImpl } from '@alien-worlds/aw-core';
 import { 
   MongoConfig,
   MongoQueryBuilders, 
   MongoSource,
-} from '@alien-worlds/storage-mongodb';
+} from '@alien-worlds/aw-storage-mongodb';
 
 import { DaoWorldsActionMongoMapper } from './actions/data/mappers';
 import { DaoWorldsActionMongoSource } from './actions/data/data-sources';
@@ -18,7 +18,7 @@ import { DaoWorldsContractServiceImpl } from "./services/dao-worlds-contract.ser
 import { DaoWorldsDeltaMongoMapper } from './deltas/data/mappers';
 import { DaoWorldsDeltaMongoSource } from './deltas/data/data-sources';
 import { DaoWorldsDeltaRepository } from './deltas/domain/repositories';
-import { EosRpcSourceImpl } from '@alien-worlds/eos';
+import { AntelopeRpcSourceImpl } from '@alien-worlds/aw-antelope';
 
 export const setupDaoWorldsActionRepository = async (
   mongo: MongoSource | MongoConfig,
@@ -77,12 +77,12 @@ export const setupDaoWorldsDeltaRepository = async (
 };
 
 export const setupDaoWorldsContractService = (
-  eosRpcSourceImpl: EosRpcSourceImpl,
+  antelopeRpcSourceImpl: AntelopeRpcSourceImpl,
   serviceUrl: string,
   container?: Container
 ): DaoWorldsContractService => {
   const service = new DaoWorldsContractServiceImpl(
-    eosRpcSourceImpl,
+    antelopeRpcSourceImpl,
     serviceUrl
   );
 

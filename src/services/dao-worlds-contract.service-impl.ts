@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 19:25:56 GMT
+ * Last updated on: Thu, 27 Jul 2023 11:27:11 GMT
  */
 
 import { 
@@ -14,39 +14,39 @@ import {
   VotesRawModel,
 } from '../deltas/data/dtos';
 import { 
-  EosRpcSourceImpl,
-  EosSmartContractServiceImpl,
-} from '@alien-worlds/eos';
+  AntelopeRpcSourceImpl,
+  AntelopeSmartContractServiceImpl,
+} from '@alien-worlds/aw-antelope';
 
 import { DaoWorldsContractService } from './dao-worlds-contract.service';
-import { GetTableRowsOptions, Result } from '@alien-worlds/api-core';
+import { GetTableRowsOptions, Result } from '@alien-worlds/aw-core';
 
 /**
  * A service class for interacting with the dao.worlds smart contract.
  * 
  * @class DaoWorldsContractServiceImpl
- * @extends {EosSmartContractServiceImpl}
+ * @extends {AntelopeSmartContractServiceImpl}
  * @implements { DaoWorldsContractService}
 */
 export class DaoWorldsContractServiceImpl
-  extends EosSmartContractServiceImpl
+  extends AntelopeSmartContractServiceImpl
   implements DaoWorldsContractService 
 {
   /**
    * Creates an instance of DaoWorldsContractServiceImpl.
    * 
    * @constructor
-   * @param {EosRpcSourceImpl} eosRpcSourceImpl - The EOS RPC source to use for interactions.
+   * @param {AntelopeRpcSourceImpl} antelopeRpcSourceImpl - The Antelope RPC source to use for interactions.
    * @param {string} serviceUrl - Service Url
    */
-  constructor(eosRpcSourceImpl: EosRpcSourceImpl, serviceUrl: string) {
-    super(eosRpcSourceImpl, serviceUrl, 'dao.worlds');
+  constructor(antelopeRpcSourceImpl: AntelopeRpcSourceImpl, serviceUrl: string) {
+    super(antelopeRpcSourceImpl, serviceUrl, 'dao.worlds');
   }
 
   /**
-   * A EosSmartContractServiceImpl for the candidates table.
+   * An AntelopeSmartContractServiceImpl for the candidates table.
    * 
-   * @type {EosSmartContractServiceImpl}
+   * @type {AntelopeSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
   public async fetchCandidates (
@@ -65,9 +65,9 @@ export class DaoWorldsContractServiceImpl
       : await this.getAll<CandidatesRawModel>(table_key, tableRowOptions);
   }
   /**
-   * A EosSmartContractServiceImpl for the candidates2 table.
+   * An AntelopeSmartContractServiceImpl for the candidates2 table.
    * 
-   * @type {EosSmartContractServiceImpl}
+   * @type {AntelopeSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
   public async fetchCandidates2 (
@@ -86,9 +86,9 @@ export class DaoWorldsContractServiceImpl
       : await this.getAll<Candidates2RawModel>(table_key, tableRowOptions);
   }
   /**
-   * A EosSmartContractServiceImpl for the candperms table.
+   * An AntelopeSmartContractServiceImpl for the candperms table.
    * 
-   * @type {EosSmartContractServiceImpl}
+   * @type {AntelopeSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
   public async fetchCandperms (
@@ -107,9 +107,9 @@ export class DaoWorldsContractServiceImpl
       : await this.getAll<CandpermsRawModel>(table_key, tableRowOptions);
   }
   /**
-   * A EosSmartContractServiceImpl for the custodians1 table.
+   * An AntelopeSmartContractServiceImpl for the custodians1 table.
    * 
-   * @type {EosSmartContractServiceImpl}
+   * @type {AntelopeSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
   public async fetchCustodians1 (
@@ -128,9 +128,9 @@ export class DaoWorldsContractServiceImpl
       : await this.getAll<Custodians1RawModel>(table_key, tableRowOptions);
   }
   /**
-   * A EosSmartContractServiceImpl for the dacglobals table.
+   * An AntelopeSmartContractServiceImpl for the dacglobals table.
    * 
-   * @type {EosSmartContractServiceImpl}
+   * @type {AntelopeSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
   public async fetchDacglobals (
@@ -149,9 +149,9 @@ export class DaoWorldsContractServiceImpl
       : await this.getAll<DacglobalsRawModel>(table_key, tableRowOptions);
   }
   /**
-   * A EosSmartContractServiceImpl for the pendingpay table.
+   * An AntelopeSmartContractServiceImpl for the pendingpay table.
    * 
-   * @type {EosSmartContractServiceImpl}
+   * @type {AntelopeSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
   public async fetchPendingpay (
@@ -170,9 +170,9 @@ export class DaoWorldsContractServiceImpl
       : await this.getAll<PendingpayRawModel>(table_key, tableRowOptions);
   }
   /**
-   * A EosSmartContractServiceImpl for the proxies table.
+   * An AntelopeSmartContractServiceImpl for the proxies table.
    * 
-   * @type {EosSmartContractServiceImpl}
+   * @type {AntelopeSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
   public async fetchProxies (
@@ -191,9 +191,9 @@ export class DaoWorldsContractServiceImpl
       : await this.getAll<ProxiesRawModel>(table_key, tableRowOptions);
   }
   /**
-   * A EosSmartContractServiceImpl for the votes table.
+   * An AntelopeSmartContractServiceImpl for the votes table.
    * 
-   * @type {EosSmartContractServiceImpl}
+   * @type {AntelopeSmartContractServiceImpl}
    * @param {GetTableRowsOptions} options 
    */
   public async fetchVotes (

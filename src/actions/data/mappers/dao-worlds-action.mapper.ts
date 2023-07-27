@@ -1,6 +1,6 @@
 /**
  * Auto generated. DO NOT edit manually.
- * Last updated on: Fri, 14 Jul 2023 19:25:55 GMT
+ * Last updated on: Thu, 27 Jul 2023 11:27:11 GMT
  */
 
 
@@ -41,7 +41,7 @@ import {
   ContractAction, 
   MapperImpl, 
   parseToBigInt 
-} from '@alien-worlds/api-core';
+} from '@alien-worlds/aw-core';
 
 import { AppointcustMongoMapper, AppointcustRawMapper } from "./appointcust.mapper";
 import { BalanceobsvMongoMapper, BalanceobsvRawMapper } from "./balanceobsv.mapper";
@@ -74,7 +74,7 @@ import { VotecustMongoMapper, VotecustRawMapper } from "./votecust.mapper";
 import { VoteproxyMongoMapper, VoteproxyRawMapper } from "./voteproxy.mapper";
 import { WeightobsvMongoMapper, WeightobsvRawMapper } from "./weightobsv.mapper";
 import { WithdrawcaneMongoMapper, WithdrawcaneRawMapper } from "./withdrawcane.mapper";
-import { MongoDB, MongoMapper } from '@alien-worlds/storage-mongodb';
+import { MongoDB, MongoMapper } from '@alien-worlds/aw-storage-mongodb';
 import { DataEntityType } from '../../domain/entities/dao-worlds-action';
 import { 
   DaoWorldsActionMongoModel,
