@@ -3,8 +3,7 @@
  * Last updated on: Thu, 27 Jul 2023 11:27:11 GMT
  */
 
-
-import { 
+import {
   Appointcust,
   Balanceobsv,
   Claimbudget,
@@ -37,46 +36,97 @@ import {
   Weightobsv,
   Withdrawcane,
 } from '../../domain/entities';
-import { 
-  ContractAction, 
-  MapperImpl, 
-  parseToBigInt 
+import {
+  ContractAction,
+  MapperImpl,
+  parseToBigInt,
 } from '@alien-worlds/aw-core';
 
-import { AppointcustMongoMapper, AppointcustRawMapper } from "./appointcust.mapper";
-import { BalanceobsvMongoMapper, BalanceobsvRawMapper } from "./balanceobsv.mapper";
-import { ClaimbudgetMongoMapper, ClaimbudgetRawMapper } from "./claimbudget.mapper";
-import { ClaimpayMongoMapper, ClaimpayRawMapper } from "./claimpay.mapper";
-import { FirecandMongoMapper, FirecandRawMapper } from "./firecand.mapper";
-import { FirecustMongoMapper, FirecustRawMapper } from "./firecust.mapper";
-import { FlagcandprofMongoMapper, FlagcandprofRawMapper } from "./flagcandprof.mapper";
-import { NewperiodMongoMapper, NewperiodRawMapper } from "./newperiod.mapper";
-import { NominateMongoMapper, NominateRawMapper } from "./nominate.mapper";
-import { NominatecaneMongoMapper, NominatecaneRawMapper } from "./nominatecane.mapper";
-import { PaycpuMongoMapper, PaycpuRawMapper } from "./paycpu.mapper";
-import { RegproxyMongoMapper, RegproxyRawMapper } from "./regproxy.mapper";
-import { RejectcuspayMongoMapper, RejectcuspayRawMapper } from "./rejectcuspay.mapper";
-import { RemovecandMongoMapper, RemovecandRawMapper } from "./removecand.mapper";
-import { RemovecstvteMongoMapper, RemovecstvteRawMapper } from "./removecstvte.mapper";
-import { RemovecuspayMongoMapper, RemovecuspayRawMapper } from "./removecuspay.mapper";
-import { ResigncustMongoMapper, ResigncustRawMapper } from "./resigncust.mapper";
-import { RunnewperiodMongoMapper, RunnewperiodRawMapper } from "./runnewperiod.mapper";
-import { SetbudgetMongoMapper, SetbudgetRawMapper } from "./setbudget.mapper";
-import { SetpermMongoMapper, SetpermRawMapper } from "./setperm.mapper";
-import { StakeobsvMongoMapper, StakeobsvRawMapper } from "./stakeobsv.mapper";
-import { StprofileMongoMapper, StprofileRawMapper } from "./stprofile.mapper";
-import { UnregproxyMongoMapper, UnregproxyRawMapper } from "./unregproxy.mapper";
-import { UnsetbudgetMongoMapper, UnsetbudgetRawMapper } from "./unsetbudget.mapper";
-import { UpdatebioMongoMapper, UpdatebioRawMapper } from "./updatebio.mapper";
-import { UpdateconfigeMongoMapper, UpdateconfigeRawMapper } from "./updateconfige.mapper";
-import { UpdatereqpayMongoMapper, UpdatereqpayRawMapper } from "./updatereqpay.mapper";
-import { VotecustMongoMapper, VotecustRawMapper } from "./votecust.mapper";
-import { VoteproxyMongoMapper, VoteproxyRawMapper } from "./voteproxy.mapper";
-import { WeightobsvMongoMapper, WeightobsvRawMapper } from "./weightobsv.mapper";
-import { WithdrawcaneMongoMapper, WithdrawcaneRawMapper } from "./withdrawcane.mapper";
+import {
+  AppointcustMongoMapper,
+  AppointcustRawMapper,
+} from './appointcust.mapper';
+import {
+  BalanceobsvMongoMapper,
+  BalanceobsvRawMapper,
+} from './balanceobsv.mapper';
+import {
+  ClaimbudgetMongoMapper,
+  ClaimbudgetRawMapper,
+} from './claimbudget.mapper';
+import { ClaimpayMongoMapper, ClaimpayRawMapper } from './claimpay.mapper';
+import { FirecandMongoMapper, FirecandRawMapper } from './firecand.mapper';
+import { FirecustMongoMapper, FirecustRawMapper } from './firecust.mapper';
+import {
+  FlagcandprofMongoMapper,
+  FlagcandprofRawMapper,
+} from './flagcandprof.mapper';
+import { NewperiodMongoMapper, NewperiodRawMapper } from './newperiod.mapper';
+import { NominateMongoMapper, NominateRawMapper } from './nominate.mapper';
+import {
+  NominatecaneMongoMapper,
+  NominatecaneRawMapper,
+} from './nominatecane.mapper';
+import { PaycpuMongoMapper, PaycpuRawMapper } from './paycpu.mapper';
+import { RegproxyMongoMapper, RegproxyRawMapper } from './regproxy.mapper';
+import {
+  RejectcuspayMongoMapper,
+  RejectcuspayRawMapper,
+} from './rejectcuspay.mapper';
+import {
+  RemovecandMongoMapper,
+  RemovecandRawMapper,
+} from './removecand.mapper';
+import {
+  RemovecstvteMongoMapper,
+  RemovecstvteRawMapper,
+} from './removecstvte.mapper';
+import {
+  RemovecuspayMongoMapper,
+  RemovecuspayRawMapper,
+} from './removecuspay.mapper';
+import {
+  ResigncustMongoMapper,
+  ResigncustRawMapper,
+} from './resigncust.mapper';
+import {
+  RunnewperiodMongoMapper,
+  RunnewperiodRawMapper,
+} from './runnewperiod.mapper';
+import { SetbudgetMongoMapper, SetbudgetRawMapper } from './setbudget.mapper';
+import { SetpermMongoMapper, SetpermRawMapper } from './setperm.mapper';
+import { StakeobsvMongoMapper, StakeobsvRawMapper } from './stakeobsv.mapper';
+import { StprofileMongoMapper, StprofileRawMapper } from './stprofile.mapper';
+import {
+  UnregproxyMongoMapper,
+  UnregproxyRawMapper,
+} from './unregproxy.mapper';
+import {
+  UnsetbudgetMongoMapper,
+  UnsetbudgetRawMapper,
+} from './unsetbudget.mapper';
+import { UpdatebioMongoMapper, UpdatebioRawMapper } from './updatebio.mapper';
+import {
+  UpdateconfigeMongoMapper,
+  UpdateconfigeRawMapper,
+} from './updateconfige.mapper';
+import {
+  UpdatereqpayMongoMapper,
+  UpdatereqpayRawMapper,
+} from './updatereqpay.mapper';
+import { VotecustMongoMapper, VotecustRawMapper } from './votecust.mapper';
+import { VoteproxyMongoMapper, VoteproxyRawMapper } from './voteproxy.mapper';
+import {
+  WeightobsvMongoMapper,
+  WeightobsvRawMapper,
+} from './weightobsv.mapper';
+import {
+  WithdrawcaneMongoMapper,
+  WithdrawcaneRawMapper,
+} from './withdrawcane.mapper';
 import { MongoDB, MongoMapper } from '@alien-worlds/aw-storage-mongodb';
 import { DataEntityType } from '../../domain/entities/dao-worlds-action';
-import { 
+import {
   DaoWorldsActionMongoModel,
   DaoWorldsActionRawModel,
   AppointcustMongoModel,
@@ -145,9 +195,10 @@ import {
 import { DaoWorldsActionName } from '../../domain/enums';
 
 // Mongo Mapper
-export class DaoWorldsActionMongoMapper
-  extends MongoMapper<ContractAction<DataEntityType>, DaoWorldsActionMongoModel>
-{
+export class DaoWorldsActionMongoMapper extends MongoMapper<
+  ContractAction<DataEntityType>,
+  DaoWorldsActionMongoModel
+> {
   public fromEntity(
     entity: ContractAction<DataEntityType>
   ): DaoWorldsActionMongoModel {
@@ -204,9 +255,7 @@ export class DaoWorldsActionMongoMapper
         );
         break;
       case DaoWorldsActionName.Paycpu:
-        entityData = new PaycpuMongoMapper().fromEntity(
-          entity.data as Paycpu
-        );
+        entityData = new PaycpuMongoMapper().fromEntity(entity.data as Paycpu);
         break;
       case DaoWorldsActionName.Regproxy:
         entityData = new RegproxyMongoMapper().fromEntity(
@@ -312,9 +361,9 @@ export class DaoWorldsActionMongoMapper
 
     const model: DaoWorldsActionMongoModel = {
       block_timestamp: entity.blockTimestamp,
-      block_number: new MongoDB.Long(entity.blockNumber),
+      block_num: new MongoDB.Long(entity.blockNumber),
       global_sequence: new MongoDB.Long(entity.globalSequence),
-      receiver_sequence: new MongoDB.Long(entity.receiverSequence),
+      recv_sequence: new MongoDB.Long(entity.receiverSequence),
       trx_id: entity.transactionId,
       action: {
         name: entity.name,
@@ -324,7 +373,7 @@ export class DaoWorldsActionMongoMapper
     };
 
     if (entity.id && MongoDB.ObjectId.isValid(entity.id)) {
-      model._id =  new MongoDB.ObjectId(entity.id);
+      model._id = new MongoDB.ObjectId(entity.id);
     }
 
     return model;
@@ -495,9 +544,9 @@ export class DaoWorldsActionMongoMapper
     const {
       _id,
       block_timestamp,
-      block_number,
+      block_num,
       global_sequence,
-      receiver_sequence,
+      recv_sequence,
       trx_id,
       action,
     } = mongoModel;
@@ -505,13 +554,13 @@ export class DaoWorldsActionMongoMapper
     return new ContractAction<DataEntityType>(
       _id.toString(),
       block_timestamp,
-      parseToBigInt(block_number),
+      parseToBigInt(block_num),
       action.account,
       action.name,
       parseToBigInt(global_sequence),
-      parseToBigInt(receiver_sequence),
+      parseToBigInt(recv_sequence),
       trx_id,
-      data,
+      data
     );
   }
 }
@@ -583,9 +632,7 @@ export class DaoWorldsActionProcessorTaskMapper extends MapperImpl<
         );
         break;
       case DaoWorldsActionName.Paycpu:
-        data = new PaycpuRawMapper().toEntity(
-          rawModel.data as PaycpuRawModel
-        );
+        data = new PaycpuRawMapper().toEntity(rawModel.data as PaycpuRawModel);
         break;
       case DaoWorldsActionName.Regproxy:
         data = new RegproxyRawMapper().toEntity(
@@ -693,7 +740,7 @@ export class DaoWorldsActionProcessorTaskMapper extends MapperImpl<
       account,
       name,
       block_timestamp,
-      block_number,
+      block_num,
       global_sequence,
       recv_sequence,
       transaction_id,
@@ -702,7 +749,7 @@ export class DaoWorldsActionProcessorTaskMapper extends MapperImpl<
     return new ContractAction<DataEntityType, DaoWorldsActionRawModel>(
       '',
       block_timestamp,
-      parseToBigInt(block_number),
+      parseToBigInt(block_num),
       account,
       name,
       parseToBigInt(global_sequence),

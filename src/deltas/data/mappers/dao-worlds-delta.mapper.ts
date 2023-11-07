@@ -3,8 +3,7 @@
  * Last updated on: Thu, 27 Jul 2023 11:27:11 GMT
  */
 
-
-import { 
+import {
   Candidates,
   Candidates2,
   Candperms,
@@ -14,24 +13,44 @@ import {
   Proxies,
   Votes,
 } from '../../domain/entities';
-import { ContractDelta, MapperImpl, parseToBigInt } from '@alien-worlds/aw-core';
+import {
+  ContractDelta,
+  MapperImpl,
+  parseToBigInt,
+} from '@alien-worlds/aw-core';
 import { MongoDB, MongoMapper } from '@alien-worlds/aw-storage-mongodb';
 import { DataEntityType } from '../../domain/entities/dao-worlds-delta';
 import { DaoWorldsDeltaMongoModel, DaoWorldsDeltaRawModel } from '../dtos';
 import { DaoWorldsTableName } from '../../domain/enums';
-import { CandidatesMongoMapper, CandidatesRawMapper } from "./candidates.mapper";
-import { Candidates2MongoMapper, Candidates2RawMapper } from "./candidates2.mapper";
-import { CandpermsMongoMapper, CandpermsRawMapper } from "./candperms.mapper";
-import { Custodians1MongoMapper, Custodians1RawMapper } from "./custodians1.mapper";
-import { DacglobalsMongoMapper, DacglobalsRawMapper } from "./dacglobals.mapper";
-import { PendingpayMongoMapper, PendingpayRawMapper } from "./pendingpay.mapper";
-import { ProxiesMongoMapper, ProxiesRawMapper } from "./proxies.mapper";
-import { VotesMongoMapper, VotesRawMapper } from "./votes.mapper";
+import {
+  CandidatesMongoMapper,
+  CandidatesRawMapper,
+} from './candidates.mapper';
+import {
+  Candidates2MongoMapper,
+  Candidates2RawMapper,
+} from './candidates2.mapper';
+import { CandpermsMongoMapper, CandpermsRawMapper } from './candperms.mapper';
+import {
+  Custodians1MongoMapper,
+  Custodians1RawMapper,
+} from './custodians1.mapper';
+import {
+  DacglobalsMongoMapper,
+  DacglobalsRawMapper,
+} from './dacglobals.mapper';
+import {
+  PendingpayMongoMapper,
+  PendingpayRawMapper,
+} from './pendingpay.mapper';
+import { ProxiesMongoMapper, ProxiesRawMapper } from './proxies.mapper';
+import { VotesMongoMapper, VotesRawMapper } from './votes.mapper';
 
 // Mongo Mapper
-export class DaoWorldsDeltaMongoMapper
-  extends MongoMapper<ContractDelta<DataEntityType>, DaoWorldsDeltaMongoModel>
-{
+export class DaoWorldsDeltaMongoMapper extends MongoMapper<
+  ContractDelta<DataEntityType>,
+  DaoWorldsDeltaMongoModel
+> {
   public fromEntity(
     entity: ContractDelta<DataEntityType>
   ): DaoWorldsDeltaMongoModel {
@@ -73,15 +92,13 @@ export class DaoWorldsDeltaMongoMapper
         );
         break;
       case DaoWorldsTableName.Votes:
-        entityData = new VotesMongoMapper().fromEntity(
-          entity.data as Votes
-        );
+        entityData = new VotesMongoMapper().fromEntity(entity.data as Votes);
         break;
     }
 
     const model: DaoWorldsDeltaMongoModel = {
       block_timestamp: entity.blockTimestamp,
-      block_number: new MongoDB.Long(entity.blockNumber),
+      block_num: new MongoDB.Long(entity.blockNumber),
       code: entity.code,
       scope: entity.scope,
       table: entity.table,
@@ -92,9 +109,9 @@ export class DaoWorldsDeltaMongoMapper
     };
 
     if (entity.id && MongoDB.ObjectId.isValid(entity.id)) {
-      model._id =  new MongoDB.ObjectId(entity.id);
+      model._id = new MongoDB.ObjectId(entity.id);
     }
-    
+
     return model;
   }
 
@@ -131,7 +148,7 @@ export class DaoWorldsDeltaMongoMapper
 
     const {
       _id,
-      block_number,
+      block_num,
       code,
       scope,
       table,
@@ -143,7 +160,7 @@ export class DaoWorldsDeltaMongoMapper
 
     return new ContractDelta<DataEntityType>(
       _id.toString(),
-      parseToBigInt(block_number),
+      parseToBigInt(block_num),
       code,
       scope,
       table,
@@ -158,8 +175,8 @@ export class DaoWorldsDeltaMongoMapper
 
 // Processor Task Mapper
 export class DaoWorldsDeltaProcessorTaskMapper extends MapperImpl<
-  ContractDelta<DataEntityType, DaoWorldsDeltaRawModel>, 
-    DaoWorldsDeltaRawModel
+  ContractDelta<DataEntityType, DaoWorldsDeltaRawModel>,
+  DaoWorldsDeltaRawModel
 > {
   public fromEntity(
     entity: ContractDelta<DataEntityType, DaoWorldsDeltaRawModel>
@@ -199,7 +216,7 @@ export class DaoWorldsDeltaProcessorTaskMapper extends MapperImpl<
     }
 
     const {
-      block_number,
+      block_num,
       code,
       scope,
       table,
@@ -211,7 +228,7 @@ export class DaoWorldsDeltaProcessorTaskMapper extends MapperImpl<
 
     return new ContractDelta<DataEntityType, DaoWorldsDeltaRawModel>(
       '',
-      parseToBigInt(block_number),
+      parseToBigInt(block_num),
       code,
       scope,
       table,
@@ -219,7 +236,7 @@ export class DaoWorldsDeltaProcessorTaskMapper extends MapperImpl<
       payer,
       parseToBigInt(primary_key),
       present,
-      block_timestamp,
+      block_timestamp
     );
   }
 }
