@@ -149,7 +149,7 @@ export type DaoWorldsActionRawModel = {
   account: string;
   name: string;
   block_timestamp: Date;
-  block_num: string;
+  block_number: string;
   global_sequence: string;
   recv_sequence: string;
   transaction_id: string;

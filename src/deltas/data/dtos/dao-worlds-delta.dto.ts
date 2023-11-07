@@ -36,7 +36,7 @@ export type DataRawType =
 
 export type DaoWorldsDeltaMongoModel = {
   _id?: MongoDB.ObjectId;
-  block_num?: MongoDB.Long;
+  block_number?: MongoDB.Long;
   code?: string;
   scope?: string;
   table?: string;
@@ -50,7 +50,7 @@ export type DaoWorldsDeltaMongoModel = {
 
 export type DaoWorldsDeltaRawModel = {
   block_timestamp: Date;
-  block_num: string;
+  block_number: string;
   code: string;
   scope: string;
   table: string;

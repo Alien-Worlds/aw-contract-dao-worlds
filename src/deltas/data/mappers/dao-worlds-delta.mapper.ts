@@ -98,7 +98,7 @@ export class DaoWorldsDeltaMongoMapper extends MongoMapper<
 
     const model: DaoWorldsDeltaMongoModel = {
       block_timestamp: entity.blockTimestamp,
-      block_num: new MongoDB.Long(entity.blockNumber),
+      block_number: new MongoDB.Long(entity.blockNumber),
       code: entity.code,
       scope: entity.scope,
       table: entity.table,
@@ -148,7 +148,7 @@ export class DaoWorldsDeltaMongoMapper extends MongoMapper<
 
     const {
       _id,
-      block_num,
+      block_number,
       code,
       scope,
       table,
@@ -160,7 +160,7 @@ export class DaoWorldsDeltaMongoMapper extends MongoMapper<
 
     return new ContractDelta<DataEntityType>(
       _id.toString(),
-      parseToBigInt(block_num),
+      parseToBigInt(block_number),
       code,
       scope,
       table,
@@ -216,7 +216,7 @@ export class DaoWorldsDeltaProcessorTaskMapper extends MapperImpl<
     }
 
     const {
-      block_num,
+      block_number,
       code,
       scope,
       table,
@@ -228,7 +228,7 @@ export class DaoWorldsDeltaProcessorTaskMapper extends MapperImpl<
 
     return new ContractDelta<DataEntityType, DaoWorldsDeltaRawModel>(
       '',
-      parseToBigInt(block_num),
+      parseToBigInt(block_number),
       code,
       scope,
       table,
