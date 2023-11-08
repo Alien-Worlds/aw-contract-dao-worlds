@@ -34,6 +34,7 @@ export type DataRawType =
   | ProxiesRawModel
   | VotesRawModel;
 
+
 export type DaoWorldsDeltaMongoModel = {
   _id?: MongoDB.ObjectId;
   block_number?: MongoDB.Long;
@@ -43,7 +44,7 @@ export type DaoWorldsDeltaMongoModel = {
   data_hash?: string;
   data?: DataDocumentType;
   payer?: string;
-  primary_key?: MongoDB.Long;
+  primary_key?: MongoDB.Long,
   present?: boolean;
   block_timestamp?: Date;
 };
